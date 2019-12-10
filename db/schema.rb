@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_213208) do
+ActiveRecord::Schema.define(version: 2019_12_10_213523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,20 @@ ActiveRecord::Schema.define(version: 2019_12_10_213208) do
     t.index ["sector_id"], name: "index_people_on_sector_id"
   end
 
+  create_table "qualifications", force: :cascade do |t|
+    t.string "qual_obtained", null: false
+    t.string "institution", null: false
+    t.text "courses_passed"
+    t.text "major_subjects"
+    t.integer "nqf_level"
+    t.date "date_from"
+    t.date "date_to"
+    t.bigint "person_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_qualifications_on_person_id"
+  end
+
   create_table "sectors", force: :cascade do |t|
     t.string "sector", null: false
     t.datetime "created_at", null: false
@@ -89,6 +103,16 @@ ActiveRecord::Schema.define(version: 2019_12_10_213208) do
     t.string "type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.bigint "skill_type_id", null: false
+    t.integer "rating", null: false
+    t.bigint "person_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_skills_on_person_id"
+    t.index ["skill_type_id"], name: "index_skills_on_skill_type_id"
   end
 
   create_table "specialisations", force: :cascade do |t|
@@ -108,6 +132,9 @@ ActiveRecord::Schema.define(version: 2019_12_10_213208) do
   add_foreign_key "employment_histories", "people"
   add_foreign_key "essays", "people"
   add_foreign_key "people", "sectors"
+  add_foreign_key "qualifications", "people"
+  add_foreign_key "skills", "people"
+  add_foreign_key "skills", "skill_types"
   add_foreign_key "specialisations", "categories"
   add_foreign_key "specialisations", "fields"
   add_foreign_key "specialisations", "people"

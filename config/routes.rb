@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :qualifications
   resources :skills
   resources :skill_types
   resources :essays
