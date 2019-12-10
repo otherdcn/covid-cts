@@ -1,0 +1,17 @@
+<%= form_with(model: professional_membership, local: true) do |form| %>
+  <% if professional_membership.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(professional_membership.errors.count, "error") %> prohibited this professional_membership from being saved:</h2>
+
+      <ul>
+      <% professional_membership.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

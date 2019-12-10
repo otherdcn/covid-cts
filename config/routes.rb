@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :professional_memberships
   resources :references
   resources :language_proficiencies
   resources :qualifications

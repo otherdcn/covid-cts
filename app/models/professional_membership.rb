@@ -1,0 +1,2 @@
+class ProfessionalMembership < ApplicationRecord
+end

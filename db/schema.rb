@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_213938) do
+ActiveRecord::Schema.define(version: 2019_12_10_214333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,6 +90,15 @@ ActiveRecord::Schema.define(version: 2019_12_10_213938) do
     t.index ["sector_id"], name: "index_people_on_sector_id"
   end
 
+  create_table "professional_memberships", force: :cascade do |t|
+    t.string "body_name", null: false
+    t.integer "registration_number"
+    t.bigint "person_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_professional_memberships_on_person_id"
+  end
+
   create_table "qualifications", force: :cascade do |t|
     t.string "qual_obtained", null: false
     t.string "institution", null: false
@@ -156,6 +165,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_213938) do
   add_foreign_key "essays", "people"
   add_foreign_key "language_proficiencies", "people"
   add_foreign_key "people", "sectors"
+  add_foreign_key "professional_memberships", "people"
   add_foreign_key "qualifications", "people"
   add_foreign_key "references", "people"
   add_foreign_key "skills", "people"
