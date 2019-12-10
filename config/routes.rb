@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'home#index'
+  get 'home/index'
   resources :professional_memberships
   resources :references
   resources :language_proficiencies
