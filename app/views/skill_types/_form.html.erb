@@ -1,0 +1,17 @@
+<%= form_with(model: skill_type, local: true) do |form| %>
+  <% if skill_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(skill_type.errors.count, "error") %> prohibited this skill_type from being saved:</h2>
+
+      <ul>
+      <% skill_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
