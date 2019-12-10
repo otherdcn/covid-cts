@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_213712) do
+ActiveRecord::Schema.define(version: 2019_12_10_213938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -104,6 +104,18 @@ ActiveRecord::Schema.define(version: 2019_12_10_213712) do
     t.index ["person_id"], name: "index_qualifications_on_person_id"
   end
 
+  create_table "references", force: :cascade do |t|
+    t.string "full_name", null: false
+    t.string "email", null: false
+    t.integer "mobile"
+    t.integer "telephone"
+    t.string "employer", null: false
+    t.bigint "person_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_references_on_person_id"
+  end
+
   create_table "sectors", force: :cascade do |t|
     t.string "sector", null: false
     t.datetime "created_at", null: false
@@ -145,6 +157,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_213712) do
   add_foreign_key "language_proficiencies", "people"
   add_foreign_key "people", "sectors"
   add_foreign_key "qualifications", "people"
+  add_foreign_key "references", "people"
   add_foreign_key "skills", "people"
   add_foreign_key "skills", "skill_types"
   add_foreign_key "specialisations", "categories"

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :references
   resources :language_proficiencies
   resources :qualifications
   resources :skills
