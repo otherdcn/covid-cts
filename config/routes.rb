@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :essays
   resources :employment_histories
   resources :contacts
   resources :specialisations
