@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_213523) do
+ActiveRecord::Schema.define(version: 2019_12_10_213712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,17 @@ ActiveRecord::Schema.define(version: 2019_12_10_213523) do
     t.string "field", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "language_proficiencies", force: :cascade do |t|
+    t.string "language", null: false
+    t.integer "read", null: false
+    t.integer "write", null: false
+    t.integer "speak", null: false
+    t.bigint "person_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_language_proficiencies_on_person_id"
   end
 
   create_table "people", force: :cascade do |t|
@@ -131,6 +142,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_213523) do
   add_foreign_key "contacts", "people"
   add_foreign_key "employment_histories", "people"
   add_foreign_key "essays", "people"
+  add_foreign_key "language_proficiencies", "people"
   add_foreign_key "people", "sectors"
   add_foreign_key "qualifications", "people"
   add_foreign_key "skills", "people"
