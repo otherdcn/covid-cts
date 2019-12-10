@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :specialisations
   resources :fields
   resources :categories
   resources :people
