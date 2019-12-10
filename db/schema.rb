@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_210700) do
+ActiveRecord::Schema.define(version: 2019_12_10_211247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "persons", force: :cascade do |t|
+  create_table "people", force: :cascade do |t|
     t.string "title"
     t.string "first_name", null: false
     t.string "last_name", null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_210700) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["id_passport_number"], name: "unique_citizen_passport_id", unique: true
-    t.index ["sector_id"], name: "index_persons_on_sector_id"
+    t.index ["sector_id"], name: "index_people_on_sector_id"
   end
 
   create_table "sectors", force: :cascade do |t|
@@ -39,5 +39,5 @@ ActiveRecord::Schema.define(version: 2019_12_10_210700) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "persons", "sectors"
+  add_foreign_key "people", "sectors"
 end
