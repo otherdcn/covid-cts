@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_210006) do
+ActiveRecord::Schema.define(version: 2019_12_10_210700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "persons", force: :cascade do |t|
+    t.string "title"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.date "dob"
+    t.integer "id_passport_number", null: false
+    t.string "citizenship", null: false
+    t.string "permit_type"
+    t.string "permit_number"
+    t.date "permit_expiry_date"
+    t.string "residential_address"
+    t.bigint "sector_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["id_passport_number"], name: "unique_citizen_passport_id", unique: true
+    t.index ["sector_id"], name: "index_persons_on_sector_id"
+  end
 
   create_table "sectors", force: :cascade do |t|
     t.string "sector", null: false
@@ -21,4 +39,5 @@ ActiveRecord::Schema.define(version: 2019_12_10_210006) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "persons", "sectors"
 end
