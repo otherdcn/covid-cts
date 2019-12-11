@@ -1,6 +1,5 @@
-<h1>Editing Contact</h1>
+<h1>Editing Contact for: <%= @person.full_name %></h1>
 
 <%= render 'form', contact: @contact %>
 
-<%= link_to 'Show', @contact %> |
-<%= link_to 'Back', contacts_path %>
+<%= link_to 'Back', person_path(@person) %>

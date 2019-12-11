@@ -1,10 +1,11 @@
 class ContactsController < ApplicationController
+  before_action :get_person
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   # GET /contacts
   # GET /contacts.json
   def index
-    @contacts = Contact.all
+    @contacts = @person.contact.all
   end
 
   # GET /contacts/1
@@ -14,7 +15,11 @@ class ContactsController < ApplicationController
 
   # GET /contacts/new
   def new
-    @contact = Contact.new
+    if @person.contact
+      @contact = @person.contact.build(params[:person_id])
+    else
+      @contact = Contact.new
+    end
   end
 
   # GET /contacts/1/edit
@@ -28,7 +33,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
+        format.html { redirect_to person_path(@person), notice: 'Contact was successfully created.' }
         format.json { render :show, status: :created, location: @contact }
       else
         format.html { render :new }
@@ -42,7 +47,7 @@ class ContactsController < ApplicationController
   def update
     respond_to do |format|
       if @contact.update(contact_params)
-        format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
+        format.html { redirect_to person_path(@person), notice: 'Contact was successfully updated.' }
         format.json { render :show, status: :ok, location: @contact }
       else
         format.html { render :edit }
@@ -56,12 +61,16 @@ class ContactsController < ApplicationController
   def destroy
     @contact.destroy
     respond_to do |format|
-      format.html { redirect_to contacts_url, notice: 'Contact was successfully destroyed.' }
+      format.html { redirect_to person_path(@person), notice: 'Contact was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+    def get_person
+      @person = Person.find(params[:person_id])
+    end
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_contact
       @contact = Contact.find(params[:id])

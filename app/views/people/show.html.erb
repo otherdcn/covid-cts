@@ -81,8 +81,24 @@
     <%= @person.sector.sector_name %>
   </p>
 
-
 <% end %>
+
+<hr />
+
+<div class="table-responsive text-nowrap">
+
+<h3> Contact Details: </h3>
+
+<% if @person.contact %>
+  <%= render @person.contact %>
+<% else %>
+  <p>No Contact Details Exist</p>
+  <%= link_to 'Add Contact', new_person_contact_path(@person) %>
+<% end %>
+
+</div>
+
+<hr />
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
 <%= link_to 'Back', people_path %>

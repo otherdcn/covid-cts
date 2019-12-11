@@ -32,9 +32,9 @@
               <td><%= contact.mobile %></td>
               <td><%= contact.email %></td>
               <td><%= contact.person.full_name %></td>
-              <td><%= link_to 'Show', contact %></td>
-              <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-              <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Show Person', [@person] %></td>
+              <td><%= link_to 'Edit Contact', edit_person_contact_path(@person, contact) %></td>
+              <td><%= link_to 'Destroy Contact', [@person, contact], method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>
@@ -48,4 +48,4 @@
 
 <br>
 
-<%= link_to 'New Contact', new_contact_path %>
+<%= link_to 'New Contact', new_person_contact_path(@person) %>

@@ -23,10 +23,10 @@ class Person < ApplicationRecord
     has_many :employment_histories, dependent: :destroy
     validates_associated :employment_histories
     
-    has_one :contact
+    has_one :contact, dependent: :destroy
     validates_associated :contact
 
-    has_one :essay
+    has_one :essay, dependent: :destroy
     validates_associated :essay
 
     def full_name
