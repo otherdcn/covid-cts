@@ -11,6 +11,33 @@
     </div>
   <% end %>
 
+  <br />
+  <hr />
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :person_id %> <br />
+      <%= form.select :person_id, Person.all.collect { |person| [person.full_name, person.id] }, prompt: 'Select Person...' %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :understanding_nipam_role %> <br />
+      <%= form.text_area :understanding_nipam_role, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :candidate_suitability%> <br />
+      <%= form.text_area :candidate_suitability, class: "form-control" %>
+    </div>
+  </div>
+
+  <hr />
+  <br />
+
   <div class="actions">
     <%= form.submit %>
   </div>

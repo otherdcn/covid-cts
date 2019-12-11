@@ -2,23 +2,40 @@
 
 <h1>Essays</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container table-container">
+  <div class="row">
+    <div class="col-md-12">
+      <table id="static-table" class="display">
 
-  <tbody>
-    <% @essays.each do |essay| %>
-      <tr>
-        <td><%= link_to 'Show', essay %></td>
-        <td><%= link_to 'Edit', edit_essay_path(essay) %></td>
-        <td><%= link_to 'Destroy', essay, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <thead>
+          <tr>
+            <th>Understanding Nipam's Role</th>
+            <th>Candidate's Suitability</th>
+            <th>Person</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @essays.each do |essay| %>
+            <tr>
+              <td><%= essay.understanding_nipam_role %></td>
+              <td><%= essay.candidate_suitability %></td>
+              <td><%= essay.person.full_name %></td>
+              <td><%= link_to 'Show', essay %></td>
+              <td><%= link_to 'Edit', edit_essay_path(essay) %></td>
+              <td><%= link_to 'Destroy', essay, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+
+	
+      </table>
+    </div>
+  </div>
+</div>
 
 <br>
 

@@ -69,6 +69,7 @@ class EssaysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def essay_params
-      params.fetch(:essay, {})
+      params.require(:essay).permit(:understanding_nipam_role, :candidate_suitability, :person_id)
+      #params.fetch(:essay, {})
     end
 end
