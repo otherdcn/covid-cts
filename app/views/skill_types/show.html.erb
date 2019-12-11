@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Skill Stype:</strong>
+  <%= @skill_type.type_name %>
+</p>
+
 <%= link_to 'Edit', edit_skill_type_path(@skill_type) %> |
 <%= link_to 'Back', skill_types_path %>
