@@ -1,4 +1,30 @@
 <p id="notice"><%= notice %></p>
 
+<h1>
+  <strong>
+    Language Proficiency for: <%= @language_proficiency.person.title %> <%= @language_proficiency.person.full_name %>
+  </strong>
+</h1>
+
+<p>
+  <strong>Language:</strong>
+  <%= @language_proficiency.language %>
+</p>
+
+<p>
+  <strong>Reading:</strong>
+  <%= @language_proficiency.read %>
+</p>
+
+<p>
+  <strong>Writing:</strong>
+  <%= @language_proficiency.write %>
+</p>
+
+<p>
+  <strong>Speaking:</strong>
+  <%= @language_proficiency.speak %>
+</p>
+
 <%= link_to 'Edit', edit_language_proficiency_path(@language_proficiency) %> |
 <%= link_to 'Back', language_proficiencies_path %>

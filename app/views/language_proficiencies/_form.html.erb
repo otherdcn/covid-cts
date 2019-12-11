@@ -11,6 +11,47 @@
     </div>
   <% end %>
 
+  <br />
+  <hr />
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :person_id %> <br />
+      <%= form.select :person_id, Person.all.collect { |person| [person.full_name, person.id] }, prompt: 'Select Person...' %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <%= form.label :language %> <br />
+      <%= form.text_field :language , class: "form-control" %>
+    </div>
+
+    <div class="form-group col-md-3">
+      Read<br />
+      <%= form.radio_button :read, 1 %> Beginner <br />
+      <%= form.radio_button :read, 2 %> Intermediate <br />
+      <%= form.radio_button :read, 3 %> Advanced <br />
+    </div>
+
+    <div class="form-group col-md-3">
+      Write<br />
+      <%= form.radio_button :write, 1 %> Beginner <br />
+      <%= form.radio_button :write, 2 %> Intermediate <br />
+      <%= form.radio_button :write, 3 %> Advanced <br />
+    </div>
+
+    <div class="form-group col-md-3">
+      Read<br />
+      <%= form.radio_button :speak, 1 %> Beginner <br />
+      <%= form.radio_button :speak, 2 %> Intermediate <br />
+      <%= form.radio_button :speak, 3 %> Advanced <br />
+    </div>
+  </div>
+
+  <hr />
+  <br />
+
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -69,6 +69,7 @@ class LanguageProficienciesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def language_proficiency_params
-      params.fetch(:language_proficiency, {})
+      params.require(:language_proficiency).permit(:language, :read, :write, :speak, :person_id)
+      #params.fetch(:language_proficiency, {})
     end
 end
