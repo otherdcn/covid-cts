@@ -69,6 +69,7 @@ class SpecialisationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def specialisation_params
-      params.fetch(:specialisation, {})
+      params.require(:specialisation).permit(:field_id, :level, :station_duty, :category_id, :person_id)
+      #params.fetch(:specialisation, {})
     end
 end
