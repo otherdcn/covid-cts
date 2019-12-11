@@ -1,4 +1,33 @@
 <p id="notice"><%= notice %></p>
 
+<h1>
+  <strong>
+    Employment History for: <%= @employment_history.person.title %> <%= @employment_history.person.full_name %>
+  </strong>
+</h1>
+
+<p>
+  <strong>Organisation/Institute:</strong>
+  <%= @employment_history.employer %>
+</p>
+
+<p>
+  <strong>From:</strong>
+  <%= @employment_history.date_from %>
+
+  <strong>Till:</strong>
+  <%= @employment_history.date_to %>
+</p>
+
+<p>
+  <strong>Position Held:</strong>
+  <%= @employment_history.position_held %>
+</p>
+
+<p>
+  <strong>Key Performance Areas:</strong>
+  <%= @employment_history.key_performance_areas %>
+</p>
+
 <%= link_to 'Edit', edit_employment_history_path(@employment_history) %> |
 <%= link_to 'Back', employment_histories_path %>

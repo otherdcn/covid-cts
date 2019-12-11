@@ -2,24 +2,44 @@
 
 <h1>Employment Histories</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container table-container">
+  <div class="row">
+    <div class="col-md-12">
+      <table id="static-table" class="display">
 
-  <tbody>
-    <% @employment_histories.each do |employment_history| %>
-      <tr>
-        <td><%= link_to 'Show', employment_history %></td>
-        <td><%= link_to 'Edit', edit_employment_history_path(employment_history) %></td>
-        <td><%= link_to 'Destroy', employment_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <thead>
+          <tr>
+            <th>Organisation</th>
+            <th>From</th>
+            <th>Till</th>
+            <th>Position Held</th>
+            <th>Person</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
 
+        <tbody>
+          <% @employment_histories.each do |history| %>
+            <tr>
+              <td><%= history.employer %></td>
+              <td><%= history.date_from %></td>
+              <td><%= history.date_to %></td>
+              <td><%= history.position_held %></td>
+              <td><%= history.person.full_name %></td>
+              <td><%= link_to 'Show', employment_history_path(history) %></td>
+              <td><%= link_to 'Edit', edit_employment_history_path(history) %></td>
+              <td><%= link_to 'Destroy', history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+
+	
+      </table>
+    </div>
+  </div>
+</div>
 <br>
 
 <%= link_to 'New Employment History', new_employment_history_path %>

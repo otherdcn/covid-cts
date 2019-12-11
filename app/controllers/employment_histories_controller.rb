@@ -66,7 +66,7 @@ class EmploymentHistoriesController < ApplicationController
     def set_employment_history
       @employment_history = EmploymentHistory.find(params[:id])
     end
-
+ 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employment_history_params
       params.require(:employment_history).permit(:employer, :position_held, :key_performance_areas, :date_from, :date_to, :person_id)
