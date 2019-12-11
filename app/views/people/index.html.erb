@@ -28,11 +28,8 @@
           <% 
 
           @people.each do |person|
-
-            has_permit = false
-
+          
             if person.permit_type.empty?
-              #has_permit = 'false'
 
           %>
             <tr>
