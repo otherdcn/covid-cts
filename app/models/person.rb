@@ -11,4 +11,9 @@ class Person < ApplicationRecord
     
     has_one :contact
     has_one :essay
+
+    def full_name
+        return first_name + ' ' + last_name
+    end
+
 end
