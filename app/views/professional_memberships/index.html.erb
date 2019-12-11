@@ -2,23 +2,40 @@
 
 <h1>Professional Memberships</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container table-container">
+  <div class="row">
+    <div class="col-md-12">
+      <table id="static-table" class="display">
 
-  <tbody>
-    <% @professional_memberships.each do |professional_membership| %>
-      <tr>
-        <td><%= link_to 'Show', professional_membership %></td>
-        <td><%= link_to 'Edit', edit_professional_membership_path(professional_membership) %></td>
-        <td><%= link_to 'Destroy', professional_membership, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <thead>
+          <tr>
+            <th>Professional Body</th>
+            <th>Registration Number</th>
+            <th>Person</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @professional_memberships.each do |professional_membership| %>
+            <tr>
+              <td><%= professional_membership.body_name %></td>
+              <td><%= professional_membership.registration_number %></td>
+              <td><%= professional_membership.person.full_name %></td>
+              <td><%= link_to 'Show', professional_membership %></td>
+              <td><%= link_to 'Edit', edit_professional_membership_path(professional_membership) %></td>
+              <td><%= link_to 'Destroy', professional_membership, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+
+	
+      </table>
+    </div>
+  </div>
+</div>
 
 <br>
 

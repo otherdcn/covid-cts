@@ -1,4 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<h1>
+  <strong>
+    Professional Membership for: <%= @professional_membership.person.title %> <%= @professional_membership.person.full_name %>
+  </strong>
+</h1>
+
+<p>
+  <strong>Professional Body:</strong>
+  <%= @professional_membership.body_name %>
+</p>
+
+<p>
+  <strong>Registration Number:</strong>
+  <%= @professional_membership.registration_number %>
+</p>
+
 <%= link_to 'Edit', edit_professional_membership_path(@professional_membership) %> |
 <%= link_to 'Back', professional_memberships_path %>

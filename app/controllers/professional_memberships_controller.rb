@@ -69,6 +69,7 @@ class ProfessionalMembershipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def professional_membership_params
-      params.fetch(:professional_membership, {})
+      params.require(:professional_membership).permit(:body_name, :registration_number, :person_id)
+      #params.fetch(:professional_membership, {})
     end
 end
