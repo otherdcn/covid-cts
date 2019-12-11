@@ -27,11 +27,7 @@
         <tbody>
           <% 
 
-          @people.each do |person|
-          
-            if person.permit_type.empty?
-
-          %>
+          @people.each do |person| %>
             <tr>
               <td><%= person.title %></td>
               <td><%= person.first_name %></td>
@@ -39,30 +35,12 @@
               <td><%= person.dob %></td>
               <td><%= person.id_passport_number %></td>
               <td><%= person.citizenship %></td>
-              <td><%= 'N/A' %></td>
-              <td><%= person.sector.sector_name%></td>
+              <td><%= person.permit_type.empty? ? "N/A" : "Yes" %></td>
+              <td><%= person.sector.nil? ? "N/A" : person.sector.sector_name %></td>
               <td><%= link_to 'Show', person %></td>
               <td><%= link_to 'Edit', edit_person_path(person) %></td>
               <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
-
-            <% else %>
-
-            <tr>
-              <td><%= person.title %></td>
-              <td><%= person.first_name %></td>
-              <td><%= person.last_name %></td>
-              <td><%= person.dob %></td>
-              <td><%= person.id_passport_number %></td>
-              <td><%= person.citizenship %></td>
-              <td><%= 'Yes' %></td>
-              <td><%= person.sector.sector_name %></td>
-              <td><%= link_to 'Show', person %></td>
-              <td><%= link_to 'Edit', edit_person_path(person) %></td>
-              <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-
-            <% end %>
 
           <% end %>
         </tbody>
