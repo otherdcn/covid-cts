@@ -69,6 +69,7 @@ class ReferencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reference_params
-      params.fetch(:reference, {})
+      params.require(:reference).permit(:full_name, :email, :mobile, :telephone, :employer, :person_id)
+      #params.fetch(:reference, {})
     end
 end

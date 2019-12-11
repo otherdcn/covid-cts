@@ -2,23 +2,45 @@
 
 <h1>References</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container table-container">
+  <div class="row">
+    <div class="col-md-12">
+      <table id="static-table" class="display">
 
-  <tbody>
-    <% @references.each do |reference| %>
-      <tr>
-        <td><%= link_to 'Show', reference %></td>
-        <td><%= link_to 'Edit', edit_reference_path(reference) %></td>
-        <td><%= link_to 'Destroy', reference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Telephone</th>
+            <th>Employer</th>
+            <th>Person</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @references.each do |reference| %>
+            <tr>
+              <td><%= reference.full_name %></td>
+              <td><%= reference.email %></td>
+              <td><%= reference.mobile %></td>
+              <td><%= reference.telephone %></td>
+              <td><%= reference.employer %></td>
+              <td><%= reference.person.full_name %></td>
+              <td><%= link_to 'Show', reference %></td>
+              <td><%= link_to 'Edit', edit_reference_path(reference) %></td>
+              <td><%= link_to 'Destroy', reference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+	
+      </table>
+    </div>
+  </div>
+</div>
 
 <br>
 
