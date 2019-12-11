@@ -69,6 +69,7 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.fetch(:contact, {})
+      params.require(:contact).permit(:postal_address, :work_telephone, :home_telephone, :fax, :mobile, :email, :person_id)
+      #params.fetch(:contact, {})
     end
 end

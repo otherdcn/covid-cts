@@ -69,6 +69,7 @@ class EmploymentHistoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employment_history_params
-      params.fetch(:employment_history, {})
+      params.require(:employment_history).permit(:employer, :position_held, :key_performance_areas, :date_from, :date_to, :person_id)
+      #params.fetch(:employment_history, {})
     end
 end
