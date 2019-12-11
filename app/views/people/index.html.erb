@@ -2,23 +2,79 @@
 
 <h1>People</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @people.each do |person| %>
-      <tr>
-        <td><%= link_to 'Show', person %></td>
-        <td><%= link_to 'Edit', edit_person_path(person) %></td>
-        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container table-container">
+  <div class="row">
+    <div class="col-md-12">
+      <table id="static-table" class="display">
+
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>First Names</th>
+            <th>Last Name</th>
+            <th>Date of Birth</th>
+            <th>ID Number/Passprt Number</th>
+            <th>Citizenship</th>
+            <th>Permit Holder</th>
+            <th>Sector</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% 
+
+          @people.each do |person|
+
+            has_permit = false
+
+            if person.permit_type.empty?
+              #has_permit = 'false'
+
+          %>
+            <tr>
+              <td><%= person.title %></td>
+              <td><%= person.first_name %></td>
+              <td><%= person.last_name %></td>
+              <td><%= person.dob %></td>
+              <td><%= person.id_passport_number %></td>
+              <td><%= person.citizenship %></td>
+              <td><%= 'N/A' %></td>
+              <td><%= person.sector.sector_name%></td>
+              <td><%= link_to 'Show', person %></td>
+              <td><%= link_to 'Edit', edit_person_path(person) %></td>
+              <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+
+            <% else %>
+
+            <tr>
+              <td><%= person.title %></td>
+              <td><%= person.first_name %></td>
+              <td><%= person.last_name %></td>
+              <td><%= person.dob %></td>
+              <td><%= person.id_passport_number %></td>
+              <td><%= person.citizenship %></td>
+              <td><%= 'Yes' %></td>
+              <td><%= person.sector.sector_name %></td>
+              <td><%= link_to 'Show', person %></td>
+              <td><%= link_to 'Edit', edit_person_path(person) %></td>
+              <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+
+            <% end %>
+
+          <% end %>
+        </tbody>
+
+
+      </table>
+    </div>
+  </div>
+</div>
 
 <br>
 

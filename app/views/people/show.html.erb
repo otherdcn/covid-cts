@@ -1,4 +1,88 @@
 <p id="notice"><%= notice %></p>
 
+<% if @person.permit_type.empty?  %>
+
+  <h1>
+    <strong>
+    <%= @person.title %> <%= @person.first_name %> <%= @person.last_name %>
+    </strong>
+  </h1>
+
+  <p>
+    <strong>Date of Birth:</strong>
+    <%= @person.dob %>
+  </p>
+
+  <p>
+    <strong>Identification Number:</strong>
+    <%= @person.id_passport_number %>
+  </p>
+
+  <p>
+    <strong>Citizenship:</strong>
+    <%= @person.citizenship %>
+  </p>
+
+  <p>
+    <strong>Residential:</strong>
+    <%= @person.residential_address %>
+  </p>
+
+  <p>
+    <strong>Sector:</strong>
+    <%= @person.sector.sector_name %>
+  </p>
+
+<% else %>
+
+  <h1>
+    <strong>
+    <%= @person.title %> <%= @person.first_name %> <%= @person.last_name %>
+    </strong>
+  </h1>
+
+  <p>
+    <strong>Date of Birth:</strong>
+    <%= @person.dob %>
+  </p>
+
+  <p>
+    <strong>Identification Number:</strong>
+    <%= @person.id_passport_number %>
+  </p>
+
+  <p>
+    <strong>Citizenship:</strong>
+    <%= @person.citizenship %>
+  </p>
+
+  <p>
+    <strong>Permit Type:</strong>
+    <%= @person.permit_type %>
+  </p>
+
+  <p>
+    <strong>Permit Number:</strong>
+    <%= @person.permit_number %>
+  </p>
+
+  <p>
+    <strong>Permit Expiry Date:</strong>
+    <%= @person.permit_expiry_date %>
+  </p>
+
+  <p>
+    <strong>Residential:</strong>
+    <%= @person.residential_address %>
+  </p>
+
+  <p>
+    <strong>Sector:</strong>
+    <%= @person.sector.sector_name %>
+  </p>
+
+
+<% end %>
+
 <%= link_to 'Edit', edit_person_path(@person) %> |
 <%= link_to 'Back', people_path %>
