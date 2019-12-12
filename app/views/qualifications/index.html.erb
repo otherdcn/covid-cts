@@ -30,7 +30,7 @@
               <td><%= qualification.date_from %></td>
               <td><%= qualification.date_to %></td>
               <td><%= qualification.person.full_name %></td>
-              <td><%= link_to 'Show Person', qualification %></td>
+              <td><%= link_to 'Show Person', person_path(@person) %></td>
               <td><%= link_to 'Edit Qualification', edit_person_qualification_path(@person, qualification) %></td>
               <td><%= link_to 'Remove Qualification', [@person, qualification], method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
