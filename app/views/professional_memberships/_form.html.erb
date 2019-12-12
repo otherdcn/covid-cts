@@ -1,4 +1,4 @@
-<%= form_with(model: professional_membership, local: true) do |form| %>
+<%= form_with(model: [@person, professional_membership], local: true) do |form| %>
   <% if professional_membership.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(professional_membership.errors.count, "error") %> prohibited this professional_membership from being saved:</h2>
@@ -15,13 +15,6 @@
   <hr />
 
   <div class="form-row">
-    <div class="form-group col-md-12">
-      <%= form.label :person_id %> <br />
-      <%= form.select :person_id, Person.all.collect { |person| [person.full_name, person.id] }, prompt: 'Select Person...' %>
-    </div>
-  </div>
-
-  <div class="form-row">
     <div class="form-group col-md-6">
       <%= form.label :body_name %> <br />
       <%= form.text_field :body_name , class: "form-control" %>
@@ -31,6 +24,10 @@
       <%= form.label :registration_number %> <br />
       <%= form.number_field  :registration_number, class: "form-control" %>
     </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.hidden_field :person_id, :value => @person['id'], class: "form-control" %>
   </div>
 
   <hr />

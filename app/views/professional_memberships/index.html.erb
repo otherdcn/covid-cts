@@ -5,7 +5,7 @@
 <div class="container table-container">
   <div class="row">
     <div class="col-md-12">
-      <table id="static-table" class="display">
+      <table id="professionalmembership-table" class="display">
 
         <thead>
           <tr>
@@ -24,9 +24,9 @@
               <td><%= professional_membership.body_name %></td>
               <td><%= professional_membership.registration_number %></td>
               <td><%= professional_membership.person.full_name %></td>
-              <td><%= link_to 'Show', professional_membership %></td>
-              <td><%= link_to 'Edit', edit_professional_membership_path(professional_membership) %></td>
-              <td><%= link_to 'Destroy', professional_membership, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Show Person', person_path(@person) %></td>
+              <td><%= link_to 'Edit Membership', edit_person_professional_membership_path(@person, professional_membership) %></td>
+              <td><%= link_to 'Destroy Membership', [@person, professional_membership], method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>
@@ -39,4 +39,4 @@
 
 <br>
 
-<%= link_to 'New Professional Membership', new_professional_membership_path %>
+<%= link_to 'New Professional Membership', new_person_professional_membership_path %>

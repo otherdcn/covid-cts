@@ -165,6 +165,29 @@
   <%= link_to 'Add Qualifications', new_person_qualification_path(@person) %>
 </div>
 
+<div>
+  <h3> Professional Memberships: </h3>
+  <% if @person.professional_memberships.empty? %>
+    <p>No Specialisation Exist</p>
+  <% else %>
+      <table id="professionalmembership-table" class="display">
+        <thead>
+          <tr>
+            <th>Professional Body</th>
+            <th>Registration Number</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @person.professional_memberships %>
+        </tbody>
+      </table>
+
+  <% end %>
+  <%= link_to 'Add Membership', new_person_professional_membership_path(@person) %>
+</div>
+
 <hr />
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
