@@ -29,6 +29,10 @@ class Person < ApplicationRecord
     has_one :essay, dependent: :destroy
     validates_associated :essay
 
+    validates :first_name, :last_name, :id_passport_number, :citizenship , presence: true
+    validates :id_passport_number, uniqueness: true
+
+    
     def full_name
         return first_name + ' ' + last_name
     end

@@ -1,5 +1,7 @@
+<!--  -->
 <p id="notice"><%= notice %></p>
-
+<!-- Person Deatils -->
+<div>
   <h1>
     <strong>
     <%= @person.title %> <%= @person.first_name %> <%= @person.last_name %>
@@ -54,9 +56,11 @@
       <%= @person.sector.sector_name %>
     </p>
   <% end %>
+</div>
 
 <hr />
 
+<!-- Contact Details -->
 <div class="table-responsive text-nowrap">
   <h3> Contact Details: </h3>
   <% if @person.contact %>
@@ -67,16 +71,7 @@
   <% end %>
 </div>
 
-<div>
-  <h3> Essay: </h3>
-  <% if @person.essay %>
-    <%= render @person.essay %>
-  <% else %>
-    <p>No Essay Exist</p>
-    <%= link_to 'Add Essay', new_person_essay_path(@person) %>
-  <% end %>
-</div>
-
+<!-- Specialisations -->
 <div>
   <h3> Specialisations: </h3>
   <% if @person.specialisations.empty? %>
@@ -104,6 +99,7 @@
   <%= link_to 'Add Specialisation', new_person_specialisation_path(@person) %>
 </div>
 
+<!-- Languages -->
 <div>
   <h3> Languages: </h3>
   <% if @person.language_proficiencies.empty? %>
@@ -128,6 +124,7 @@
   <%= link_to 'Add Language Proficiency', new_person_language_proficiency_path(@person) %>
 </div>
 
+<!-- Skills and Competencies -->
 <div>
   <h3> Skills and Competencies: </h3>
   <% if @person.skills.empty? %>
@@ -151,6 +148,7 @@
   <%= link_to 'Add Skill', new_person_skill_path(@person) %>
 </div>
 
+<!-- Qualifications -->
 <div>
   <h3> Qualifications: </h3>
   <% if @person.qualifications.empty? %>
@@ -182,6 +180,7 @@
   <%= link_to 'Add Qualifications', new_person_qualification_path(@person) %>
 </div>
 
+<!-- Professional Memberships -->
 <div>
   <h3> Professional Memberships: </h3>
   <% if @person.professional_memberships.empty? %>
@@ -205,32 +204,7 @@
   <%= link_to 'Add Membership', new_person_professional_membership_path(@person) %>
 </div>
 
-<div>
-  <h3> References: </h3>
-  <% if @person.references.empty? %>
-    <p>No References Exist</p>
-  <% else %>
-      <table id="references-table" class="display">
-        <thead>
-          <tr>
-            <th>Full Name</th>
-            <th>Email</th>
-            <th>Mobile</th>
-            <th>Telephone</th>
-            <th>Employer</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-          <%= render @person.references %>
-        <tbody>
-        </tbody>
-      </table>
-
-  <% end %>
-  <%= link_to 'Add Reference', new_person_reference_path(@person) %>
-</div>
-
+<!-- Employment History -->
 <div>
   <h3> Employment History: </h3>
   <% if @person.employment_histories.empty? %>
@@ -259,7 +233,46 @@
   <%= link_to 'Add Previous Employment', new_person_employment_history_path(@person) %>
 </div>
 
+<!-- Essay -->
+<div>
+  <h3> Essay: </h3>
+  <% if @person.essay %>
+    <%= render @person.essay %>
+  <% else %>
+    <p>No Essay Exist</p>
+    <%= link_to 'Add Essay', new_person_essay_path(@person) %>
+  <% end %>
+</div>
+
+<!-- References -->
+<div>
+  <h3> References: </h3>
+  <% if @person.references.empty? %>
+    <p>No References Exist</p>
+  <% else %>
+      <table id="references-table" class="display">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Telephone</th>
+            <th>Employer</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+          <%= render @person.references %>
+        <tbody>
+        </tbody>
+      </table>
+
+  <% end %>
+  <%= link_to 'Add Reference', new_person_reference_path(@person) %>
+</div>
+
 <hr />
 
-<%= link_to 'Edit', edit_person_reference_path(@person) %> |
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Remove', [@person], method: :delete, data: { confirm: 'This is not a reversible procedure! Are you sure?' } %> | 
 <%= link_to 'Back', people_path %>
