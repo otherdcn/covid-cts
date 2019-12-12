@@ -1,4 +1,4 @@
-<%= form_with(model: qualification, local: true) do |form| %>
+<%= form_with(model: [@person, qualification], local: true) do |form| %>
   <% if qualification.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(qualification.errors.count, "error") %> prohibited this qualification from being saved:</h2>
@@ -13,13 +13,6 @@
 
   <br />
   <hr />
-
-  <div class="form-row">
-    <div class="form-group col-md-12">
-      <%= form.label :person_id %> <br />
-      <%= form.select :person_id, Person.all.collect { |person| [person.full_name, person.id] }, prompt: 'Select Person...' %>
-    </div>
-  </div>
 
   <div class="form-row">
     <div class="form-group col-md-5">
@@ -60,6 +53,10 @@
       <%= form.label :date_to %> <br />
       <%= form.date_select :date_to, class: "form-control" %>
     </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.hidden_field :person_id, :value => @person['id'], class: "form-control" %>
   </div>
       
   <hr />

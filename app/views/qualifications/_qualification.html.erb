@@ -1,0 +1,10 @@
+<tr>
+    <td><%= qualification.qual_obtained %></td>
+    <td><%= qualification.institution %></td>
+    <td><%= qualification.nqf_level %></td>
+    <td><%= qualification.date_from %></td>
+    <td><%= qualification.date_to %></td>
+    <td><%= link_to 'View Full', person_qualification_path(@person, qualification) %></td>
+    <td><%= link_to 'Edit', edit_person_qualification_path(@person, qualification) %></td>
+    <td><%= link_to 'Remove', [@person, qualification], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

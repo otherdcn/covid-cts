@@ -1,10 +1,11 @@
 class QualificationsController < ApplicationController
+  before_action :get_person
   before_action :set_qualification, only: [:show, :edit, :update, :destroy]
 
   # GET /qualifications
   # GET /qualifications.json
   def index
-    @qualifications = Qualification.all
+    @qualifications = @person.qualifications
   end
 
   # GET /qualifications/1
@@ -14,7 +15,7 @@ class QualificationsController < ApplicationController
 
   # GET /qualifications/new
   def new
-    @qualification = Qualification.new
+    @qualification = @person.qualifications.build
   end
 
   # GET /qualifications/1/edit
@@ -24,11 +25,11 @@ class QualificationsController < ApplicationController
   # POST /qualifications
   # POST /qualifications.json
   def create
-    @qualification = Qualification.new(qualification_params)
+    @qualification = @person.qualifications.build(qualification_params)
 
     respond_to do |format|
       if @qualification.save
-        format.html { redirect_to @qualification, notice: 'Qualification was successfully created.' }
+        format.html { redirect_to person_path(@person), notice: 'Qualification was successfully created.' }
         format.json { render :show, status: :created, location: @qualification }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class QualificationsController < ApplicationController
   def update
     respond_to do |format|
       if @qualification.update(qualification_params)
-        format.html { redirect_to @qualification, notice: 'Qualification was successfully updated.' }
+        format.html { redirect_to person_path(@person), notice: 'Qualification was successfully updated.' }
         format.json { render :show, status: :ok, location: @qualification }
       else
         format.html { render :edit }
@@ -56,15 +57,19 @@ class QualificationsController < ApplicationController
   def destroy
     @qualification.destroy
     respond_to do |format|
-      format.html { redirect_to qualifications_url, notice: 'Qualification was successfully destroyed.' }
+      format.html { redirect_to person_path(@person), notice: 'Qualification was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+    def get_person
+      @person = Person.find(params[:person_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_qualification
-      @qualification = Qualification.find(params[:id])
+      @qualification = @person.qualifications.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -7,11 +7,11 @@ Rails.application.routes.draw do
     resources :specialisations
     resources :language_proficiencies
     resources :skills
+    resources :qualifications
   end
 
   resources :professional_memberships
   resources :references
-  resources :qualifications
   resources :skill_types
   resources :employment_histories
   resources :fields

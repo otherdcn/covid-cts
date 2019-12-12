@@ -113,7 +113,7 @@
 
 <div>
   <h3> Skills and Competencies: </h3>
-  <% if @person.specialisations.empty? %>
+  <% if @person.skills.empty? %>
     <p>No Skills and Competencies Exist</p>
   <% else %>
       <table id="skills-table" class="display">
@@ -132,6 +132,37 @@
 
   <% end %>
   <%= link_to 'Add Skill', new_person_skill_path(@person) %>
+</div>
+
+<div>
+  <h3> Qualifications: </h3>
+  <% if @person.qualifications.empty? %>
+    <p>No Qualifications Exist</p>
+  <% else %>
+
+      <table id="qualifications-table" class="display">
+
+        <thead>
+          <tr>
+            <th>Qualification</th>
+            <th>Institution</th>
+            <th>NQF Level</th>
+            <th>Start</th>
+            <th>End</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <%= render @person.qualifications %>
+        </tbody>
+	
+      </table>
+
+  <% end %>
+  <%= link_to 'Add Qualifications', new_person_qualification_path(@person) %>
 </div>
 
 <hr />
