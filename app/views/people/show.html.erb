@@ -80,7 +80,7 @@
 <div>
   <h3> Specialisations: </h3>
   <% if @person.specialisations.empty? %>
-    <p>No Specialisation Exist</p>
+    <p>No Specialisations Exist</p>
   <% else %>
     <%= render @person.specialisations %>
   <% end %>
@@ -92,7 +92,7 @@
   <% if @person.language_proficiencies.empty? %>
     <p>No Language Proficiencies Exist</p>
   <% else %>
-    <table id="static-table" class="display">
+    <table id="langproficiencies-table" class="display">
       <thead>
         <tr>
           <th>Language</th>
@@ -103,13 +103,35 @@
           <th></th>
         </tr>
       </thead>
-        
       <tbody>
         <%= render @person.language_proficiencies %>
       </tbody>
     </table>
   <% end %>
   <%= link_to 'Add Language Proficiency', new_person_language_proficiency_path(@person) %>
+</div>
+
+<div>
+  <h3> Skills and Competencies: </h3>
+  <% if @person.specialisations.empty? %>
+    <p>No Skills and Competencies Exist</p>
+  <% else %>
+      <table id="skills-table" class="display">
+        <thead>
+          <tr>
+            <th>Skill</th>
+            <th>Rating</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @person.skills %>
+        </tbody>
+      </table>
+
+  <% end %>
+  <%= link_to 'Add Skill', new_person_skill_path(@person) %>
 </div>
 
 <hr />

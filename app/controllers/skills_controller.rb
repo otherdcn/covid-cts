@@ -1,10 +1,11 @@
 class SkillsController < ApplicationController
+  before_action :get_person
   before_action :set_skill, only: [:show, :edit, :update, :destroy]
 
   # GET /skills
   # GET /skills.json
   def index
-    @skills = Skill.all
+    @skills = @person.skills
   end
 
   # GET /skills/1
@@ -14,7 +15,7 @@ class SkillsController < ApplicationController
 
   # GET /skills/new
   def new
-    @skill = Skill.new
+    @skill = @person.skills.build
   end
 
   # GET /skills/1/edit
@@ -24,11 +25,11 @@ class SkillsController < ApplicationController
   # POST /skills
   # POST /skills.json
   def create
-    @skill = Skill.new(skill_params)
+    @skill = @person.skills.build(skill_params)
 
     respond_to do |format|
       if @skill.save
-        format.html { redirect_to @skill, notice: 'Skill was successfully created.' }
+        format.html { redirect_to person_path(@person), notice: 'Skill was successfully created.' }
         format.json { render :show, status: :created, location: @skill }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class SkillsController < ApplicationController
   def update
     respond_to do |format|
       if @skill.update(skill_params)
-        format.html { redirect_to @skill, notice: 'Skill was successfully updated.' }
+        format.html { redirect_to person_path(@person), notice: 'Skill was successfully updated.' }
         format.json { render :show, status: :ok, location: @skill }
       else
         format.html { render :edit }
@@ -56,15 +57,19 @@ class SkillsController < ApplicationController
   def destroy
     @skill.destroy
     respond_to do |format|
-      format.html { redirect_to skills_url, notice: 'Skill was successfully destroyed.' }
+      format.html { redirect_to person_path(@person), notice: 'Skill was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+    def get_person
+      @person = Person.find(params[:person_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_skill
-      @skill = Skill.find(params[:id])
+      @skill = @person.skills.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

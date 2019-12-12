@@ -6,12 +6,12 @@ Rails.application.routes.draw do
     resources :essays
     resources :specialisations
     resources :language_proficiencies
+    resources :skills
   end
 
   resources :professional_memberships
   resources :references
   resources :qualifications
-  resources :skills
   resources :skill_types
   resources :employment_histories
   resources :fields
