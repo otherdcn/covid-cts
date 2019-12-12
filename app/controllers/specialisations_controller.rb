@@ -1,10 +1,11 @@
 class SpecialisationsController < ApplicationController
+  before_action :get_person
   before_action :set_specialisation, only: [:show, :edit, :update, :destroy]
 
   # GET /specialisations
   # GET /specialisations.json
   def index
-    @specialisations = Specialisation.all
+    @specialisations = @person.specialisations
   end
 
   # GET /specialisations/1
@@ -14,7 +15,7 @@ class SpecialisationsController < ApplicationController
 
   # GET /specialisations/new
   def new
-    @specialisation = Specialisation.new
+    @specialisation = @person.specialisations.build
   end
 
   # GET /specialisations/1/edit
@@ -24,11 +25,11 @@ class SpecialisationsController < ApplicationController
   # POST /specialisations
   # POST /specialisations.json
   def create
-    @specialisation = Specialisation.new(specialisation_params)
+    @specialisation = @person.specialisations.build(specialisation_params)
 
     respond_to do |format|
       if @specialisation.save
-        format.html { redirect_to @specialisation, notice: 'Specialisation was successfully created.' }
+        format.html { redirect_to person_path(@person), notice: 'Specialisation was successfully created.' }
         format.json { render :show, status: :created, location: @specialisation }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class SpecialisationsController < ApplicationController
   def update
     respond_to do |format|
       if @specialisation.update(specialisation_params)
-        format.html { redirect_to @specialisation, notice: 'Specialisation was successfully updated.' }
+        format.html { redirect_to person_path(@person), notice: 'Specialisation was successfully updated.' }
         format.json { render :show, status: :ok, location: @specialisation }
       else
         format.html { render :edit }
@@ -56,15 +57,19 @@ class SpecialisationsController < ApplicationController
   def destroy
     @specialisation.destroy
     respond_to do |format|
-      format.html { redirect_to specialisations_url, notice: 'Specialisation was successfully destroyed.' }
+      format.html { redirect_to person_path(@person), notice: 'Specialisation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+    def get_person
+      @person = Person.find(params[:person_id])
+    end
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_specialisation
-      @specialisation = Specialisation.find(params[:id])
+      @specialisation = @person.specialisations.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,6 +1,5 @@
-<h1>Editing Specialisation</h1>
+<h1>Editing Specialisation for: <%= @person.title + ' ' + @person.full_name %></h1>
 
 <%= render 'form', specialisation: @specialisation %>
 
-<%= link_to 'Show', @specialisation %> |
-<%= link_to 'Back', specialisations_path %>
+<%= link_to 'Back', person_path(@person) %>

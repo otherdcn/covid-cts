@@ -1,0 +1,22 @@
+<p>
+  <strong>Field of Specialisation:</strong>
+  <%= specialisation.field.field %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= specialisation.level %>
+</p>
+
+<p>
+  <strong>Station Duty:</strong>
+  <%= specialisation.station_duty %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= specialisation.category.category %>
+</p>
+
+<%= link_to 'Edit', edit_person_specialisation_path(@person, specialisation) %> |
+<%= link_to 'Remove', [@person, specialisation], method: :delete, data: { confirm: 'Are you sure?' } %> |

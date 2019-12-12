@@ -86,29 +86,33 @@
 <hr />
 
 <div class="table-responsive text-nowrap">
-
-<h3> Contact Details: </h3>
-
-<% if @person.contact %>
-  <%= render @person.contact %>
-<% else %>
-  <p>No Contact Details Exist</p>
-  <%= link_to 'Add Contact', new_person_contact_path(@person) %>
-<% end %>
-
+  <h3> Contact Details: </h3>
+  <% if @person.contact %>
+    <%= render @person.contact %>
+  <% else %>
+    <p>No Contact Details Exist</p>
+    <%= link_to 'Add Contact', new_person_contact_path(@person) %>
+  <% end %>
 </div>
 
-<div class="table-responsive text-nowrap">
+<div>
+  <h3> Essay: </h3>
+  <% if @person.essay %>
+    <%= render @person.essay %>
+  <% else %>
+    <p>No Essay Exist</p>
+    <%= link_to 'Add Essay', new_person_essay_path(@person) %>
+  <% end %>
+</div>
 
-<h3> Essay: </h3>
-
-<% if @person.essay %>
-  <%= render @person.essay %>
-<% else %>
-  <p>No Essay Exist</p>
-  <%= link_to 'Add Essay', new_person_essay_path(@person) %>
-<% end %>
-
+<div>
+  <h3> Specialisations: </h3>
+  <% if @person.specialisations.empty? %>
+    <p>No Specialisation Exist</p>
+  <% else %>
+    <%= render @person.specialisations %>
+  <% end %>
+  <%= link_to 'Add Specialisation', new_person_specialisation_path(@person) %>
 </div>
 
 <hr />

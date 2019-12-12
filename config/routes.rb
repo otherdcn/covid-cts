@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :people do
     resources :contacts
     resources :essays
+    resources :specialisations
   end
 
   resources :professional_memberships
@@ -13,7 +14,6 @@ Rails.application.routes.draw do
   resources :skills
   resources :skill_types
   resources :employment_histories
-  resources :specialisations
   resources :fields
   resources :categories
   resources :sectors
