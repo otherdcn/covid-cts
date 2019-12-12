@@ -1,6 +1,6 @@
 <tr>
   <td><%= skill.skill_type.type_name %></td>
-  <td><%= skill.rating %></td>
+  <td><%= skill.get_rating %></td>
   <td><%= link_to 'Edit', edit_person_skill_path(@person, skill) %></td>
   <td><%= link_to 'Remove', [@person, skill], method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>

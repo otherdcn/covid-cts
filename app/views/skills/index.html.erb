@@ -22,7 +22,7 @@
           <% @skills.each do |skill| %>
             <tr>
               <td><%= skill.skill_type.type_name %></td>
-              <td><%= skill.rating %></td>
+              <td><%= skill.get_rating %></td>
               <td><%= skill.person.full_name %></td>
               <td><%= link_to 'Show Person', person_path(@person) %></td>
               <td><%= link_to 'Edit Skill', edit_person_skill_path(@person, skill) %></td>
