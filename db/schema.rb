@@ -10,15 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_12_132029) do
+ActiveRecord::Schema.define(version: 2019_12_12_133146) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "citext"
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string "category", null: false
+    t.citext "category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category"], name: "unique_category", unique: true
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -32,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_132029) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["person_id"], name: "index_contacts_on_person_id"
+    t.index ["person_id"], name: "one_contacts_for_one_person", unique: true
   end
 
   create_table "employment_histories", force: :cascade do |t|
@@ -53,12 +56,14 @@ ActiveRecord::Schema.define(version: 2019_12_12_132029) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["person_id"], name: "index_essays_on_person_id"
+    t.index ["person_id"], name: "one_essay_for_one_person", unique: true
   end
 
   create_table "fields", force: :cascade do |t|
-    t.string "field", null: false
+    t.citext "field", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["field"], name: "unique_field", unique: true
   end
 
   create_table "language_proficiencies", force: :cascade do |t|
@@ -80,7 +85,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_132029) do
     t.string "id_passport_number", null: false
     t.string "citizenship", null: false
     t.string "permit_type"
-    t.string "permit_number"
+    t.citext "permit_number"
     t.date "permit_expiry_date"
     t.string "residential_address"
     t.bigint "sector_id"
@@ -132,9 +137,10 @@ ActiveRecord::Schema.define(version: 2019_12_12_132029) do
   end
 
   create_table "skill_types", force: :cascade do |t|
-    t.string "type_name", null: false
+    t.citext "type_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["type_name"], name: "unique_type", unique: true
   end
 
   create_table "skills", force: :cascade do |t|

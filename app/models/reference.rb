@@ -1,5 +1,5 @@
 class Reference < ApplicationRecord
     belongs_to :person
-    validates :person, presence: true
-    
+
+    validates :person_id, :full_name, :email, :employer, presence: true
 end

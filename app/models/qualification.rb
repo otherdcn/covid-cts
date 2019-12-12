@@ -1,4 +1,5 @@
 class Qualification < ApplicationRecord
     belongs_to :person
-    validates :person, presence: true
+    
+    validates :person_id, :qual_obtained, :institution, presence: true
 end

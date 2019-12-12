@@ -1,5 +1,5 @@
 class ProfessionalMembership < ApplicationRecord
     belongs_to :person
-    validates :person, presence: true
-    
+
+    validates :person_id, :body_name, presence: true
 end

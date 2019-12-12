@@ -1,5 +1,5 @@
 class LanguageProficiency < ApplicationRecord
     belongs_to :person
-    validates :person, presence: true
     
+    validates :person_id, :language, :read, :write, :speak, presence: true
 end

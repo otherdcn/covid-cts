@@ -1,10 +1,9 @@
 class Specialisation < ApplicationRecord
     belongs_to :person
-    validates :person, presence: true
-
     belongs_to :category
-    validates :category, presence: true
-
     belongs_to :field
-    validates :field, presence: true
+    
+    validates :field_id, presence: true
+    validates :person_id, presence: true
+    validates :level, :station_duty, presence: true
 end
