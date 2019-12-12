@@ -5,11 +5,11 @@
 <div class="container table-container">
   <div class="row">
     <div class="col-md-12">
-      <table id="static-table" class="display">
+      <table id="emphistories-table" class="display">
 
         <thead>
           <tr>
-            <th>Organisation</th>
+            <th>Organisation/Institution</th>
             <th>From</th>
             <th>Till</th>
             <th>Position Held</th>
@@ -28,9 +28,9 @@
               <td><%= history.date_to %></td>
               <td><%= history.position_held %></td>
               <td><%= history.person.full_name %></td>
-              <td><%= link_to 'Show', employment_history_path(history) %></td>
-              <td><%= link_to 'Edit', edit_employment_history_path(history) %></td>
-              <td><%= link_to 'Destroy', history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Show Person', person_path(@person) %></td>
+              <td><%= link_to 'Edit Previous Employment', edit_person_employment_history_path(@person, history) %></td>
+              <td><%= link_to 'Remove Previous Employment', [@person, history], method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>
@@ -42,4 +42,4 @@
 </div>
 <br>
 
-<%= link_to 'New Employment History', new_employment_history_path %>
+<%= link_to 'New Employment History', new_person_employment_history_path %>

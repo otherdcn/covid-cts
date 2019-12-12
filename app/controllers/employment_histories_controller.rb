@@ -1,10 +1,11 @@
 class EmploymentHistoriesController < ApplicationController
+  before_action :get_person
   before_action :set_employment_history, only: [:show, :edit, :update, :destroy]
 
   # GET /employment_histories
   # GET /employment_histories.json
   def index
-    @employment_histories = EmploymentHistory.all
+    @employment_histories = @person.employment_histories
   end
 
   # GET /employment_histories/1
@@ -14,7 +15,7 @@ class EmploymentHistoriesController < ApplicationController
 
   # GET /employment_histories/new
   def new
-    @employment_history = EmploymentHistory.new
+    @employment_history = @person.employment_histories.build
   end
 
   # GET /employment_histories/1/edit
@@ -24,11 +25,11 @@ class EmploymentHistoriesController < ApplicationController
   # POST /employment_histories
   # POST /employment_histories.json
   def create
-    @employment_history = EmploymentHistory.new(employment_history_params)
+    @employment_history = @person.employment_histories.build(employment_history_params)
 
     respond_to do |format|
       if @employment_history.save
-        format.html { redirect_to @employment_history, notice: 'Employment history was successfully created.' }
+        format.html { redirect_to person_path(@person), notice: 'Employment history was successfully created.' }
         format.json { render :show, status: :created, location: @employment_history }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class EmploymentHistoriesController < ApplicationController
   def update
     respond_to do |format|
       if @employment_history.update(employment_history_params)
-        format.html { redirect_to @employment_history, notice: 'Employment history was successfully updated.' }
+        format.html { redirect_to person_path(@person), notice: 'Employment history was successfully updated.' }
         format.json { render :show, status: :ok, location: @employment_history }
       else
         format.html { render :edit }
@@ -56,15 +57,19 @@ class EmploymentHistoriesController < ApplicationController
   def destroy
     @employment_history.destroy
     respond_to do |format|
-      format.html { redirect_to employment_histories_url, notice: 'Employment history was successfully destroyed.' }
+      format.html { redirect_to person_path(@person), notice: 'Employment history was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+    def get_person
+      @person = Person.find(params[:person_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_employment_history
-      @employment_history = EmploymentHistory.find(params[:id])
+      @employment_history = @person.employment_histories.find(params[:id])
     end
  
     # Never trust parameters from the scary internet, only allow the white list through.

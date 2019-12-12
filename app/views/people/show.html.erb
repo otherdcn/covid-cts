@@ -214,6 +214,34 @@
   <%= link_to 'Add Reference', new_person_reference_path(@person) %>
 </div>
 
+<div>
+  <h3> Employment History: </h3>
+  <% if @person.employment_histories.empty? %>
+    <p>No Employment History Exist</p>
+  <% else %>
+      <table id="emphistories-table" class="display">
+        <thead>
+          <tr>
+            <th>Organisation/Institution</th>
+            <th>From</th>
+            <th>Till</th>
+            <th>Position Held</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @person.employment_histories %>
+        </tbody>
+
+	
+      </table>
+
+  <% end %>
+  <%= link_to 'Add Previous Employment', new_person_employment_history_path(@person) %>
+</div>
+
 <hr />
 
 <%= link_to 'Edit', edit_person_reference_path(@person) %> |

@@ -1,0 +1,9 @@
+<tr>
+    <td><%= employment_history.employer %></td>
+    <td><%= employment_history.date_from %></td>
+    <td><%= employment_history.date_to %></td>
+    <td><%= employment_history.position_held %></td>
+    <td><%= link_to 'View Full', person_employment_history_path(@person, employment_history) %></td>
+    <td><%= link_to 'Edit ', edit_person_employment_history_path(@person, employment_history) %></td>
+    <td><%= link_to 'Remove', [@person, employment_history], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

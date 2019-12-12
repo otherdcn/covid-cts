@@ -10,10 +10,10 @@ Rails.application.routes.draw do
     resources :qualifications
     resources :professional_memberships
     resources :references
+    resources :employment_histories
   end
 
   resources :skill_types
-  resources :employment_histories
   resources :fields
   resources :categories
   resources :sectors
