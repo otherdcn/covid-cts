@@ -87,6 +87,31 @@
   <%= link_to 'Add Specialisation', new_person_specialisation_path(@person) %>
 </div>
 
+<div>
+  <h3> Languages: </h3>
+  <% if @person.language_proficiencies.empty? %>
+    <p>No Language Proficiencies Exist</p>
+  <% else %>
+    <table id="static-table" class="display">
+      <thead>
+        <tr>
+          <th>Language</th>
+          <th>Read</th>
+          <th>Write</th>
+          <th>Speak</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+        
+      <tbody>
+        <%= render @person.language_proficiencies %>
+      </tbody>
+    </table>
+  <% end %>
+  <%= link_to 'Add Language Proficiency', new_person_language_proficiency_path(@person) %>
+</div>
+
 <hr />
 
 <%= link_to 'Edit', edit_person_path(@person) %> |

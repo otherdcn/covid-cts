@@ -5,11 +5,11 @@ Rails.application.routes.draw do
     resources :contacts
     resources :essays
     resources :specialisations
+    resources :language_proficiencies
   end
 
   resources :professional_memberships
   resources :references
-  resources :language_proficiencies
   resources :qualifications
   resources :skills
   resources :skill_types

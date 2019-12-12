@@ -1,0 +1,8 @@
+<tr>
+    <td><%= language_proficiency.language %></td>
+    <td><%= language_proficiency.read %></td>
+    <td><%= language_proficiency.write %></td>
+    <td><%= language_proficiency.speak %></td>
+    <td><%= link_to 'Edit', edit_person_language_proficiency_path(@person, language_proficiency) %></td>
+    <td><%= link_to 'Remove', [@person, language_proficiency], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

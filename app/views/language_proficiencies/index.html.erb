@@ -28,9 +28,9 @@
               <td><%= language_proficiency.write %></td>
               <td><%= language_proficiency.speak %></td>
               <td><%= language_proficiency.person.full_name %></td>
-              <td><%= link_to 'Show', language_proficiency %></td>
-              <td><%= link_to 'Edit', edit_language_proficiency_path(language_proficiency) %></td>
-              <td><%= link_to 'Destroy', language_proficiency, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Show Person', person_path(@person) %></td>
+              <td><%= link_to 'Edit Proficiency', edit_person_language_proficiency_path(@person, language_proficiency) %></td>
+              <td><%= link_to 'Remove Proficiency', [@person, language_proficiency], method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>
@@ -42,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Language Proficiency', new_language_proficiency_path %>
+<%= link_to 'New Language Proficiency', new_person_language_proficiency_path %>
