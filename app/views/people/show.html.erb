@@ -82,7 +82,24 @@
   <% if @person.specialisations.empty? %>
     <p>No Specialisations Exist</p>
   <% else %>
-    <%= render @person.specialisations %>
+      <table id="specialisation-table" class="display">
+
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Level</th>
+            <th>Station Duty</th>
+            <th>Category</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <%= render @person.specialisations %>
+        </tbody>
+      </table>
+
   <% end %>
   <%= link_to 'Add Specialisation', new_person_specialisation_path(@person) %>
 </div>
