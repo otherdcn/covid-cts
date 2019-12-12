@@ -1,4 +1,4 @@
-<%= form_with(model: reference, local: true) do |form| %>
+<%= form_with(model: [@person, reference], local: true) do |form| %>
   <% if reference.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(reference.errors.count, "error") %> prohibited this reference from being saved:</h2>
@@ -13,13 +13,6 @@
 
   <br />
   <hr />
-
-  <div class="form-row">
-    <div class="form-group col-md-12">
-      <%= form.label :person_id %> <br />
-      <%= form.select :person_id, Person.all.collect { |person| [person.full_name, person.id] }, prompt: 'Select Person...' %>
-    </div>
-  </div>
 
   <div class="form-row">
     <div class="form-group col-md-12">
@@ -50,6 +43,10 @@
       <%= form.label :employer %> <br />
       <%= form.text_field :employer, class: "form-control" %>
     </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.hidden_field :person_id, :value => @person['id'], class: "form-control" %>
   </div>
 
   <hr />

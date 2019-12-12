@@ -1,0 +1,9 @@
+<tr>
+  <td><%= reference.full_name %></td>
+  <td><%= reference.email %></td>
+  <td><%= reference.mobile %></td>
+  <td><%= reference.telephone %></td>
+  <td><%= reference.employer %></td>
+  <td><%= link_to 'Edit', edit_person_reference_path(reference) %></td>
+  <td><%= link_to 'Destroy', [@person, reference], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

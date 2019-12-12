@@ -1,10 +1,11 @@
 class ReferencesController < ApplicationController
+  before_action :get_person
   before_action :set_reference, only: [:show, :edit, :update, :destroy]
 
   # GET /references
   # GET /references.json
   def index
-    @references = Reference.all
+    @references = @person.references
   end
 
   # GET /references/1
@@ -14,7 +15,7 @@ class ReferencesController < ApplicationController
 
   # GET /references/new
   def new
-    @reference = Reference.new
+    @reference = @person.references.build
   end
 
   # GET /references/1/edit
@@ -24,11 +25,11 @@ class ReferencesController < ApplicationController
   # POST /references
   # POST /references.json
   def create
-    @reference = Reference.new(reference_params)
+    @reference = @person.references.build(reference_params)
 
     respond_to do |format|
       if @reference.save
-        format.html { redirect_to @reference, notice: 'Reference was successfully created.' }
+        format.html { redirect_to person_path(@person), notice: 'Reference was successfully created.' }
         format.json { render :show, status: :created, location: @reference }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class ReferencesController < ApplicationController
   def update
     respond_to do |format|
       if @reference.update(reference_params)
-        format.html { redirect_to @reference, notice: 'Reference was successfully updated.' }
+        format.html { redirect_to person_path(@person), notice: 'Reference was successfully updated.' }
         format.json { render :show, status: :ok, location: @reference }
       else
         format.html { render :edit }
@@ -56,15 +57,19 @@ class ReferencesController < ApplicationController
   def destroy
     @reference.destroy
     respond_to do |format|
-      format.html { redirect_to references_url, notice: 'Reference was successfully destroyed.' }
+      format.html { redirect_to person_path(@person), notice: 'Reference was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+    def get_person
+      @person = Person.find(params[:person_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_reference
-      @reference = Reference.find(params[:id])
+      @reference = @person.references.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

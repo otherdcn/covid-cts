@@ -9,9 +9,9 @@ Rails.application.routes.draw do
     resources :skills
     resources :qualifications
     resources :professional_memberships
+    resources :references
   end
 
-  resources :references
   resources :skill_types
   resources :employment_histories
   resources :fields
