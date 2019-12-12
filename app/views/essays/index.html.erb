@@ -24,9 +24,9 @@
               <td><%= essay.understanding_nipam_role %></td>
               <td><%= essay.candidate_suitability %></td>
               <td><%= essay.person.full_name %></td>
-              <td><%= link_to 'Show', essay %></td>
-              <td><%= link_to 'Edit', edit_essay_path(essay) %></td>
-              <td><%= link_to 'Destroy', essay, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Show Person', person_contact_path(@person) %></td>
+              <td><%= link_to 'Edit Essay', edit_person_essay_path(@person, essay) %></td>
+              <td><%= link_to 'Remove Essay', [@person, essay], method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>
@@ -39,4 +39,4 @@
 
 <br>
 
-<%= link_to 'New Essay', new_essay_path %>
+<%= link_to 'New Essay', new_person_contact_path(@person) %>

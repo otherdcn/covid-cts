@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'home/index'
   resources :people do
     resources :contacts
+    resources :essays
   end
 
   resources :professional_memberships
@@ -11,7 +12,6 @@ Rails.application.routes.draw do
   resources :qualifications
   resources :skills
   resources :skill_types
-  resources :essays
   resources :employment_histories
   resources :specialisations
   resources :fields

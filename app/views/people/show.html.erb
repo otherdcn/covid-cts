@@ -98,6 +98,19 @@
 
 </div>
 
+<div class="table-responsive text-nowrap">
+
+<h3> Essay: </h3>
+
+<% if @person.essay %>
+  <%= render @person.essay %>
+<% else %>
+  <p>No Essay Exist</p>
+  <%= link_to 'Add Essay', new_person_essay_path(@person) %>
+<% end %>
+
+</div>
+
 <hr />
 
 <%= link_to 'Edit', edit_person_path(@person) %> |

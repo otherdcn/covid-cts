@@ -1,10 +1,11 @@
 class EssaysController < ApplicationController
+  before_action :get_person
   before_action :set_essay, only: [:show, :edit, :update, :destroy]
 
   # GET /essays
   # GET /essays.json
   def index
-    @essays = Essay.all
+    @essays = @person.essay
   end
 
   # GET /essays/1
@@ -14,7 +15,11 @@ class EssaysController < ApplicationController
 
   # GET /essays/new
   def new
-    @essay = Essay.new
+    if @person.essay
+      @essay = @person.essay.build(params[:person_id])
+    else
+      @essay = Essay.new
+    end
   end
 
   # GET /essays/1/edit
@@ -28,7 +33,7 @@ class EssaysController < ApplicationController
 
     respond_to do |format|
       if @essay.save
-        format.html { redirect_to @essay, notice: 'Essay was successfully created.' }
+        format.html { redirect_to person_path(@person), notice: 'Essay was successfully created.' }
         format.json { render :show, status: :created, location: @essay }
       else
         format.html { render :new }
@@ -42,7 +47,7 @@ class EssaysController < ApplicationController
   def update
     respond_to do |format|
       if @essay.update(essay_params)
-        format.html { redirect_to @essay, notice: 'Essay was successfully updated.' }
+        format.html { redirect_to person_path(@person), notice: 'Essay was successfully updated.' }
         format.json { render :show, status: :ok, location: @essay }
       else
         format.html { render :edit }
@@ -56,12 +61,15 @@ class EssaysController < ApplicationController
   def destroy
     @essay.destroy
     respond_to do |format|
-      format.html { redirect_to essays_url, notice: 'Essay was successfully destroyed.' }
+      format.html { redirect_to person_path(@person), notice: 'Essay was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+    def get_person
+      @person = Person.find(params[:person_id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_essay
       @essay = Essay.find(params[:id])

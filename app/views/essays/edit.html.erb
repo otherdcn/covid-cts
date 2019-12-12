@@ -1,6 +1,5 @@
-<h1>Editing Essay</h1>
+<h1>Editing Essay for: <%= @person.title + ' ' + @person.full_name %></h1>
 
 <%= render 'form', essay: @essay %>
 
-<%= link_to 'Show', @essay %> |
-<%= link_to 'Back', essays_path %>
+<%= link_to 'Back', person_path(@person) %>
