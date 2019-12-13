@@ -1,0 +1,2 @@
+module AllQualificationsHelper
+end

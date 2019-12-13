@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Qualifications</h1>
+
+<div class="container table-container">
+  <div class="row">
+    <div class="col-md-12">
+      <table id="static-table" class="display">
+
+        <thead>
+          <tr>
+            <th>Qualification</th>
+            <th>Institution</th>
+            <th>NQF Level</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Person</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @qualifications.each do |qualification| %>
+            <tr>
+              <td><%= qualification.qual_obtained %></td>
+              <td><%= qualification.institution %></td>
+              <td><%= qualification.nqf_level %></td>
+              <td><%= qualification.date_from %></td>
+              <td><%= qualification.date_to %></td>
+              <td><%= qualification.person.full_name %></td>
+              <td><%= link_to 'View Qualification', all_qualification_path(qualification) %></td>
+              <td><%= link_to 'Show Person', person_path(qualification.person) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+	
+      </table>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'New Qualification', new_all_qualification_path %>

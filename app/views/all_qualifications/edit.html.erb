@@ -1,0 +1,5 @@
+<h1>Editing Qualification for: <%= @qualification.person.title + ' ' +@qualification.person.full_name %></h1>
+
+<%= render 'form', qualification: @qualification %>
+
+<%= link_to 'Back', all_qualification_path %>

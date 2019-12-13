@@ -1,0 +1,71 @@
+<%= form_with(model: @qualification, url: all_qualifications_url, local: true) do |form| %>
+    <% if (@qualification.errors.any?) %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@qualification.errors.count, "error") %> prohibited this qualification from being saved:</h2>
+
+        <ul>
+        <% @qualification.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <br />
+  <hr />
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :person_id %> <br />
+      <%= form.select :person_id, Person.all.collect { |person| [person.full_name, person.id] }, prompt: 'Select Person...' %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <%= form.label :qual_obtained %> <br />
+      <%= form.text_field :qual_obtained , class: "form-control" %>
+    </div>
+
+    <div class="form-group col-md-5">
+      <%= form.label :institution %> <br />
+      <%= form.text_field :institution, class: "form-control" %>
+    </div>
+
+    <div class="form-group col-md-2">
+      <%= form.label :nqf_level %> <br />
+      <%= form.number_field :nqf_level, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.label :courses_passed %> <br />
+      <%= form.text_area :courses_passed, class: "form-control" %>
+    </div>
+
+    <div class="form-group col-md-6">
+      <%= form.label :major_subjects %> <br />
+      <%= form.text_area :major_subjects, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.label :date_from %> <br />
+      <%= form.date_select :date_from, class: "form-control" %>
+    </div>
+
+    <div class="form-group col-md-6">
+      <%= form.label :date_to %> <br />
+      <%= form.date_select :date_to, class: "form-control" %>
+    </div>
+  </div>
+      
+  <hr />
+  <br />
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
