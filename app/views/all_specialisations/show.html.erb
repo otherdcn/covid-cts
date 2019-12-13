@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <strong>
+  Specialisation for: <%= @specialisation.person.title %> <%= @specialisation.person.first_name %> <%= @specialisation.person.last_name %>
+  </strong>
+</h1>
+
+<p>
+  <strong>Field of Specialisation:</strong>
+  <%= @specialisation.field.field %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @specialisation.level %>
+</p>
+
+<p>
+  <strong>Station Duty:</strong>
+  <%= @specialisation.station_duty %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @specialisation.category.category %>
+</p>
+
+<%= link_to 'Edit', edit_person_specialisation_path(@specialisation.person, @specialisation) %> |
+<%= link_to 'Back', all_specialisations_path %>

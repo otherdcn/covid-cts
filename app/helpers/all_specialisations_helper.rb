@@ -1,0 +1,2 @@
+module AllSpecialisationsHelper
+end
