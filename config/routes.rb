@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   resources :sectors
   resources :all_qualifications
   resources :all_specialisations
+  resources :all_skills
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

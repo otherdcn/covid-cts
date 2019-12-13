@@ -1,0 +1,40 @@
+<%= form_with(model: @skill, url: all_skills_url, local: true) do |form| %>
+  <% if @skill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@skill.errors.count, "error") %> prohibited this skill from being saved:</h2>
+
+      <ul>
+      <% @skill.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :person_id %> <br />
+      <%= form.select :person_id, Person.all.collect { |person| [person.full_name, person.id] }, prompt: 'Select Person...' %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :skill_type_id %> <br />
+      <%= form.select :skill_type_id, SkillType.all.collect { |type| [type.type_name, type.id] }, prompt: 'Select Skill...' %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :rating %> <br />
+      <%= form.radio_button :rating, 1 %> Excellent <br />
+      <%= form.radio_button :rating, 2 %> Good <br />
+      <%= form.radio_button :rating, 3 %> Average <br />
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

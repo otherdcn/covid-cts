@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <strong>
+  Skill Rating for: <%= @skill.person.title %> <%= @skill.person.full_name %>
+  </strong>
+</h1>
+
+<p>
+  <strong>Skill:</strong>
+  <%= @skill.skill_type.type_name %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @skill.get_rating %>
+</p>
+
+<%= link_to 'Edit', edit_person_skill_path(@skill.person, @skill) %> |
+<%= link_to 'Back', all_skills_path %>
