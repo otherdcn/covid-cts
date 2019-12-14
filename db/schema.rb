@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_12_133146) do
+ActiveRecord::Schema.define(version: 2019_12_14_155030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -164,6 +164,15 @@ ActiveRecord::Schema.define(version: 2019_12_12_133146) do
     t.index ["category_id"], name: "index_specialisations_on_category_id"
     t.index ["field_id"], name: "index_specialisations_on_field_id"
     t.index ["person_id"], name: "index_specialisations_on_person_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.citext "email"
+    t.string "password_digest"
+    t.string "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "contacts", "people"
