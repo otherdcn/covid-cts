@@ -1,0 +1,46 @@
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">LOGO HERE</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li class='dropdown'>
+        <a href='#' class='dropdown-toggle' data-toggle='dropdown'>
+          Resource Pool <span class='caret'></span>
+        </a>
+        <ul class='dropdown-menu'>
+          <li><a href="/all_specialisations">Specialisations</a></li>
+          <li><a href="/all_qualifications">Qualifications</a></li>
+          <li><a href="/all_skills">Skills and Competencies</a></li>
+          <li><a href="/all_professional_memberships">Professional Memberships</a></li>
+          <li class='divider'></li>
+          <li><a href="/people">Experts</a></li>
+        </ul>
+      </li>
+      <li class='dropdown'>
+        <a href='#' class='dropdown-toggle' data-toggle='dropdown'>
+          More <span class='caret'></span>
+        </a>
+        <ul class='dropdown-menu'>
+          <li><a href="/categories">Category</a></li>
+          <li><a href="/fields">Specialisation Fields</a></li>
+          <li><a href="/skill_types">Skill Type</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+      <a href="/#"><span class="glyphicon glyphicon-user"></span>
+      <%= current_user.email %>
+      </a>
+      </li>
+      
+      <li>
+      <a href="/logout"><span class="glyphicon glyphicon-log-out"></span>
+      Logout
+      </a>
+      </li>
+    </ul>
+  </div>
+</nav>
