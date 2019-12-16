@@ -1,40 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>
-  <strong>
-  Contact Details for: <%= @contact.person.title %> <%= @contact.person.full_name %>
-  </strong>
-</h1>
+  <h1>
+    <strong>
+    Contact Details for: <%= @contact.person.title %> <%= @contact.person.full_name %>
+    </strong>
+  </h1>
 
-<p>
-  <strong>Postal Address:</strong>
-  <%= @contact.postal_address %>
-</p>
+  <p>
+    <strong>Postal Address:</strong>
+    <%= @contact.postal_address %>
+  </p>
 
-<p>
-  <strong>Work Telephone:</strong>
-  <%= @contact.work_telephone %>
-</p>
+  <p>
+    <strong>Work Telephone:</strong>
+    <%= @contact.work_telephone %>
+  </p>
 
-<p>
-  <strong>Home Telephone:</strong>
-  <%= @contact.home_telephone %>
-</p>
+  <p>
+    <strong>Home Telephone:</strong>
+    <%= @contact.home_telephone %>
+  </p>
 
-<p>
-  <strong>Fax:</strong>
-  <%= @contact.fax %>
-</p>
+  <p>
+    <strong>Fax:</strong>
+    <%= @contact.fax %>
+  </p>
 
-<p>
-  <strong>Mobile:</strong>
-  <%= @contact.mobile %>
-</p>
+  <p>
+    <strong>Mobile:</strong>
+    <%= @contact.mobile %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @contact.email %>
+  </p>
 
-<%= link_to 'Edit', edit_person_contact_path(@person, @contact) %> |
-<%= link_to 'Back', person_path(@person) %>
+  <%= link_to 'Edit', edit_person_contact_path(@person, @contact) %> |
+  <%= link_to 'Back', person_path(@person) %>
+</div>

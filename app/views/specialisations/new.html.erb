@@ -1,5 +1,7 @@
-<h1>New Specialisation for: <%= @person.title + ' ' + @person.full_name %> </h1>
+<div class="container">
+    <h1>New Specialisation for: <%= @person.title + ' ' + @person.full_name %> </h1>
 
-<%= render 'form', specialisation: @specialisation %>
+    <%= render 'form', specialisation: @specialisation %>
 
-<%= link_to 'Back', person_path(@person) %>
+    <%= link_to 'Back', person_path(@person) %>
+</div>

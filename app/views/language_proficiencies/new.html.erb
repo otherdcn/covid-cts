@@ -1,5 +1,7 @@
-<h1>New Language Proficiency for: <%= @person.title + ' ' +@person.full_name %></h1>
+<div class="container">
+    <h1>New Language Proficiency for: <%= @person.title + ' ' +@person.full_name %></h1>
 
-<%= render 'form', language_proficiency: @language_proficiency %>
+    <%= render 'form', language_proficiency: @language_proficiency %>
 
-<%= link_to 'Back', person_path(@person) %>
+    <%= link_to 'Back', person_path(@person) %>
+</div>

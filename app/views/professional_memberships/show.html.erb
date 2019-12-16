@@ -1,20 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>
-  <strong>
-    Professional Membership for: <%= @professional_membership.person.title %> <%= @professional_membership.person.full_name %>
-  </strong>
-</h1>
+  <h1>
+    <strong>
+      Professional Membership for: <%= @professional_membership.person.title %> <%= @professional_membership.person.full_name %>
+    </strong>
+  </h1>
 
-<p>
-  <strong>Professional Body:</strong>
-  <%= @professional_membership.body_name %>
-</p>
+  <p>
+    <strong>Professional Body:</strong>
+    <%= @professional_membership.body_name %>
+  </p>
 
-<p>
-  <strong>Registration Number:</strong>
-  <%= @professional_membership.registration_number %>
-</p>
+  <p>
+    <strong>Registration Number:</strong>
+    <%= @professional_membership.registration_number %>
+  </p>
 
-<%= link_to 'Edit', edit_person_professional_membership_path(@person, @professional_membership) %> |
-<%= link_to 'Back', person_path(@person) %>
+  <%= link_to 'Edit', edit_person_professional_membership_path(@person, @professional_membership) %> |
+  <%= link_to 'Back', person_path(@person) %>
+</div>

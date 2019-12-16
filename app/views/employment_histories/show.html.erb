@@ -1,33 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>
-  <strong>
-    Employment History for: <%= @employment_history.person.title %> <%= @employment_history.person.full_name %>
-  </strong>
-</h1>
+  <h1>
+    <strong>
+      Employment History for: <%= @employment_history.person.title %> <%= @employment_history.person.full_name %>
+    </strong>
+  </h1>
 
-<p>
-  <strong>Organisation/Institute:</strong>
-  <%= @employment_history.employer %>
-</p>
+  <p>
+    <strong>Organisation/Institute:</strong>
+    <%= @employment_history.employer %>
+  </p>
 
-<p>
-  <strong>From:</strong>
-  <%= @employment_history.date_from %>
+  <p>
+    <strong>From:</strong>
+    <%= @employment_history.date_from %>
 
-  <strong>Till:</strong>
-  <%= @employment_history.date_to %>
-</p>
+    <strong>Till:</strong>
+    <%= @employment_history.date_to %>
+  </p>
 
-<p>
-  <strong>Position Held:</strong>
-  <%= @employment_history.position_held %>
-</p>
+  <p>
+    <strong>Position Held:</strong>
+    <%= @employment_history.position_held %>
+  </p>
 
-<p>
-  <strong>Key Performance Areas:</strong>
-  <pre><%= @employment_history.key_performance_areas %></pre>
-</p>
+  <p>
+    <strong>Key Performance Areas:</strong>
+    <pre><%= @employment_history.key_performance_areas %></pre>
+  </p>
 
-<%= link_to 'Edit', edit_person_employment_history_path(@employment_history) %> |
-<%= link_to 'Back', person_path(@person) %>
+  <%= link_to 'Edit', edit_person_employment_history_path(@employment_history) %> |
+  <%= link_to 'Back', person_path(@person) %>
+</div>

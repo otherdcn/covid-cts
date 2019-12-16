@@ -1,5 +1,7 @@
-<h1>New Qualification for: <%= @person.title + ' ' +@person.full_name %></h1>
+<div class="container">
+    <h1>New Qualification for: <%= @person.title + ' ' +@person.full_name %></h1>
 
-<%= render 'form', qualification: @qualification %>
+    <%= render 'form', qualification: @qualification %>
 
-<%= link_to 'Back', person_path(@person) %>
+    <%= link_to 'Back', person_path(@person) %>
+</div>
