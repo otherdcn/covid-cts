@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>People</h1>
+<div class="container table-container">
 
+  <h1>Experts</h1>
+  <br />
 
-<div class="table-container">
   <div class="row">
     <div class="col-md-12">
       <table id="people-table" class="display">
@@ -47,8 +48,8 @@
       </table>
     </div>
   </div>
+  
+  <br>
+  <%= link_to 'New Person', new_person_path %>
+
 </div>
-
-<br>
-
-<%= link_to 'New Person', new_person_path %>

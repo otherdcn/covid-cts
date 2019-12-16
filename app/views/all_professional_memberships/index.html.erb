@@ -1,8 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Professional Memberships</h1>
 
-<div class="table-container">
+
+<div class="container table-container">
+
+  <h1>Professional Memberships</h1>
+  <br />
+
   <div class="row">
     <div class="col-md-12">
       <table id="static-table" class="display">
@@ -33,8 +37,9 @@
       </table>
     </div>
   </div>
+
+  <br>
+  <%= link_to 'New Professional Membership', new_all_professional_membership_path %>
+
 </div>
 
-<br>
-
-<%= link_to 'New Professional Membership', new_all_professional_membership_path %>

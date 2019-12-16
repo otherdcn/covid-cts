@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Qualifications</h1>
+<div class="container table-container">
 
-<div class="table-container">
+  <h1>Qualifications</h1>
+  <br />
+
   <div class="row">
     <div class="col-md-12">
       <table id="static-table" class="display">
@@ -38,8 +40,8 @@
       </table>
     </div>
   </div>
+  
+  <br>
+  <%= link_to 'New Qualification', new_all_qualification_path %>
+
 </div>
-
-<br>
-
-<%= link_to 'New Qualification', new_all_qualification_path %>

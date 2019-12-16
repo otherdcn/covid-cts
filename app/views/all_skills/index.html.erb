@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Skills and Competencies</h1>
+<div class=" container table-container">
 
-<div class="table-container">
+  <h1>Skills and Competencies</h1>
+  <br />
+
   <div class="row">
     <div class="col-md-12">
       <table id="static-table" class="display">
@@ -32,8 +34,8 @@
       </table>
     </div>
   </div>
+  
+  <br>
+  <%= link_to 'New Skill', new_all_skill_path %>
+
 </div>
-
-<br>
-
-<%= link_to 'New Skill', new_all_skill_path %>

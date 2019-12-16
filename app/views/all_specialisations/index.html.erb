@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Specialisations</h1>
+<div class="container table-container">
 
-<div class="table-container">
+  <h1>Specialisations</h1>
+  <br />
+  
   <div class="row">
     <div class="col-md-12">
       <table id="static-table" class="display">
@@ -36,8 +38,9 @@
       </table>
     </div>
   </div>
+
+  <br>
+  <%= link_to 'New Specialisation', new_all_specialisation_path %>
+
 </div>
 
-<br>
-
-<%= link_to 'New Specialisation', new_all_specialisation_path %>
