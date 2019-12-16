@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container">
 <h1>
   <strong>
     Professional Membership for: <%= @professional_membership.person.title %> <%= @professional_membership.person.full_name %>
@@ -18,3 +19,4 @@
 
 <%= link_to 'Edit', edit_person_professional_membership_path(@professional_membership.person, @professional_membership) %> |
 <%= link_to 'Back', all_professional_memberships_path %>
+</div>
