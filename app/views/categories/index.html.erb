@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Categories</h1>
+<div class="container">
+  
+  <h1>Categories</h1>
 
-<div class="container table-container">
   <div class="row">
     <div class="col-md-12">
       <table id="static-table" class="display">
@@ -28,8 +29,9 @@
       </table>
     </div>
   </div>
+  
+  <br>
+
+  <%= link_to 'New Category', new_category_path %>
+
 </div>
-
-<br>
-
-<%= link_to 'New Category', new_category_path %>
