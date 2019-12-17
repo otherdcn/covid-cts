@@ -68,7 +68,8 @@
           <% end %>
           <br />
           <%= link_to 'Edit', edit_person_path(@person) %> |
-          <%= link_to 'Remove', [@person], method: :delete, data: { confirm: 'This is not a reversible procedure! Are you sure?' } %> 
+          <%= link_to 'Remove', [@person], method: :delete, data: { confirm: 'This is not a reversible procedure! Are you sure?' } %> |
+          <%= link_to 'Back', people_path %>
         </div>
 
         <hr />
@@ -285,6 +286,7 @@
         </div>
 
         <hr />
+        <%= link_to 'Back', people_path %>
       </div>
     
     </div>

@@ -43,8 +43,13 @@
     </div>
 
     <div class="form-group col-md-4">
-      <%= form.label :citizenship %>
-      <%= form.text_field :citizenship, class: "form-control" %>
+      <%= form.label :citizenship %> <br />
+      <select id="person_citizenship" name="person[citizenship]">
+        <option value="">Select Country...</option>
+        <% CS.countries.each_value do |country| %>
+          <option value="<%= country %>"> <%= country %> </option>
+        <% end %>
+      </select>
     </div>
   </div>
 
