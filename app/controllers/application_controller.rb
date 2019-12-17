@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
     def logged_in?
       !current_user.nil?
     end
+
+    def cities
+      render json: CS.cities(params[:state], :na).to_json
+    end
   
     private
       def require_login
