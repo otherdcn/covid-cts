@@ -44,12 +44,8 @@
 
     <div class="form-group col-md-4">
       <%= form.label :citizenship %> <br />
-      <select id="person_citizenship" name="person[citizenship]">
-        <option value="">Select Country...</option>
-        <% CS.countries.each_value do |country| %>
-          <option value="<%= country %>"> <%= country %> </option>
-        <% end %>
-      </select>
+      <%= form.select :citizenship, CS.countries.each { |country| [country,country] } %>
+      <p> <%= person.get_country? =%> </p>
     </div>
   </div>
 
@@ -82,7 +78,7 @@
       <%= form.label 'Sector' %> <br />
       <%= form.select :sector_id, Sector.all.collect {|opt| [opt.sector, opt.id]}, prompt: 'Select Sector...'  %>
     </div>
-  </div>  
+  </div>
 
   <hr />
 
