@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !current_user.nil?
   end
+
   def cities
     render json: CS.cities(params[:state], :na).to_json
   end
@@ -21,8 +22,9 @@ class ApplicationController < ActionController::Base
   private
     def initialize_country
       @country_array = Array.new
-      CS.countries.each { |k,v| country_array.push(v) }
+      CS.countries.each { |k,v| @country_array.push(v) }
     end
+
     def require_login
       unless logged_in?
         flash[:error] = "You must be logged in to access this section"
