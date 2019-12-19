@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :require_login
   before_action :initialize_country
+  before_action :initialize_namibian_regions_and_cities
   helper_method :current_user
 
   def current_user
@@ -23,6 +24,20 @@ class ApplicationController < ActionController::Base
     def initialize_country
       @country_array = Array.new
       CS.countries.each { |k,v| @country_array.push(v) }
+    end
+
+    def initialize_namibian_regions_and_cities
+      @region_array = Array.new
+      @namibian_cities = Array.new
+
+      CS.states(:na).each_key { |k| @region_array.push(k)}
+
+      @region_array.each do |region|
+        CS.cities(region, :na).each do |city|
+          @namibian_cities.push(city)
+          @namibian_cities.sort!
+        end
+      end
     end
 
     def require_login

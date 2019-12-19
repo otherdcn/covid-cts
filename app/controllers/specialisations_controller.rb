@@ -1,5 +1,6 @@
 class SpecialisationsController < ApplicationController
   before_action :get_person
+  before_action :initialize_level
   before_action :set_specialisation, only: [:show, :edit, :update, :destroy]
 
   # GET /specialisations
@@ -63,6 +64,10 @@ class SpecialisationsController < ApplicationController
   end
 
   private
+    def initialize_level
+      @level_array = ["Executive Development Programme", "Senior Management Development Programm", "Middle Management Development Programme", "Supervisory Development Programme", "Foundation Programme"]
+    end
+
     def get_person
       @person = Person.find(params[:person_id])
     end

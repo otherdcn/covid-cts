@@ -16,39 +16,38 @@
 
   <div class="form-row">
     <div class="form-group col-md-3">
-      <%= form.label :person_id %>
+      <%= form.label :person_id %><br />
       <%= form.select :person_id, Person.all.collect { |person| [person.full_name, person.id] }, prompt: 'Select Person...' %>
     </div>
 
     <div class="form-group col-md-5">
-      <%= form.label :category_id %>
+      <%= form.label :category_id %><br />
       <%= form.select :category_id, Category.all.collect { |category| [category.category, category.id] }, prompt: 'Select Category...' %>
     </div>
 
     <div class="form-group col-md-4">
-      <%= form.label :field_id %>
+      <%= form.label :field_id %><br />
       <%= form.select :field_id, Field.all.collect { |field| [field.field, field.id] }, prompt: 'Select Field of Specialisation...' %>
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
-      <%= form.label :level %>
-      <%= form.text_field :level, class: "form-control" %>
+      <%= form.label :level %> <br />
+      <%= form.select :level, @level_array.each { |level| [level,level]} %>
     </div>
-  </div>
 
-  <div class="form-row">
     <div class="form-group col-md-6">
-      <%= form.label :station_duty %>
-      <%= form.text_field :station_duty, class: "form-control" %>
-    </div>
+      <%= form.label :station_duty %><br />
+      <%= form.select :station_duty, @namibian_cities.each { |city| [city,city]} %><br />
   </div>
 
   <hr />
   <br />
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-row">
+    <div class="actions form-group col-md-12">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>
