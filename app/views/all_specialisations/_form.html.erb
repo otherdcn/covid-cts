@@ -34,12 +34,12 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <%= form.label :level %> <br />
-      <%= form.select :level, @level_array.each { |level| [level,level]} %>
+      <%= form.select :level, @level_array.each { |level| [level,level]}, prompt: 'Select Level...'  %>
     </div>
 
     <div class="form-group col-md-6">
       <%= form.label :station_duty %><br />
-      <%= form.select :station_duty, @namibian_cities.each { |city| [city,city]} %><br />
+      <%= form.select :station_duty, @namibian_cities.each { |city| [city,city]}, prompt: 'Select City/Town...'  %>
   </div>
 
   <hr />

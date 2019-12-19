@@ -44,7 +44,7 @@
 
     <div class="form-group col-md-4">
       <%= form.label :citizenship %> <br />
-      <%= form.select :citizenship, @country_array.each { |country| [country,country] } %>
+      <%= form.select :citizenship, @country_array.each { |country| [country,country] }, prompt: 'Select Country of Citizenship...' %>
     </div>
   </div>
 
