@@ -1,5 +1,11 @@
 <div class="container">
-  <h1>New Sector</h1>
-  <%= render 'form', sector: @sector %>
-  <%= link_to 'Back', sectors_path %>
+  <div class="row">
+    <div class="form-group col-md-8 col-md-offset-2">
+     <legend><h1>New Sector</h1></legend>
+   
+     <%= render 'form', sector: @sector %>
+     
+     <%= link_to 'Back', sectors_path %>
+    </div>
+  </div>
 </div>

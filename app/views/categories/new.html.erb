@@ -1,7 +1,11 @@
 <div class="container">
-    <h1>New Category</h1>
-    
-    <%= render 'form', category: @category %>
-    
-    <%= link_to 'Back', categories_path %>
+  <div class="row">
+    <div class="form-group col-md-8 col-md-offset-2">
+      <legend><h1>New Category</h1></legend>
+      
+      <%= render 'form', category: @category %>
+      
+      <%= link_to 'Back', categories_path %>
+    </div>
+  </div>
 </div>

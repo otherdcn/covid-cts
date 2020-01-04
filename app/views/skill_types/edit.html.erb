@@ -1,8 +1,12 @@
 <div class="container">
-    <h1>Editing Skill Type</h1>
-
-    <%= render 'form', skill_type: @skill_type %>
-
-    <%= link_to 'Show', @skill_type %> |
-    <%= link_to 'Back', skill_types_path %>
+  <div class="row">
+    <div class="form-group col-md-8 col-md-offset-2">
+      <legend><h1>Editing Skill Type</h1></legend>
+  
+      <%= render 'form', skill_type: @skill_type %>
+  
+      <%= link_to 'Show', @skill_type %> |
+      <%= link_to 'Back', skill_types_path %>
+    </div>
+  </div>
 </div>

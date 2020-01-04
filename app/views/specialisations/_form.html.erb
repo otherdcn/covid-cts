@@ -11,38 +11,39 @@
     </div>
   <% end %>
 
-  <br />
-  <hr />
+  <p>Required fields are followed by <abbr title="Required">*</abbr></p>
 
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <%= form.label :category_id %> <br />
+    <div class="form-group col-md-12">
+      <%= form.label :category_id %><br />
       <%= form.select :category_id, Category.all.collect { |category| [category.category, category.id] }, prompt: 'Select Category...' %>
     </div>
+  </div>
 
-    <div class="form-group col-md-6">
-      <%= form.label :field_id %> <br />
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :field_id %> <abbr title="Required" aria-label="required">*</abbr> <br />
       <%= form.select :field_id, Field.all.collect { |field| [field.field, field.id] }, prompt: 'Select Field of Specialisation...' %>
     </div>
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <%= form.label :level %> <br />
+    <div class="form-group col-md-12">
+      <%= form.label :level %> <abbr title="Required" aria-label="required">*</abbr> <br />
       <%= form.select :level, @level_array.each { |level| [level,level]}, prompt: 'Select Level...'  %>
     </div>
-
-    <div class="form-group col-md-6">
-      <%= form.label :station_duty %><br />
-      <%= form.select :station_duty, @namibian_cities.each { |city| [city,city]}, prompt: 'Select City/Town...'  %><br />
   </div>
 
-  <div class="form-group">
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :station_duty %><br />
+      <%= form.select :station_duty, @namibian_cities.each { |city| [city,city]}, prompt: 'Select City/Town...'  %>
+  </div>
+
+  <div>
     <%= form.hidden_field :person_id, :value => @person['id'], class: "form-control" %>
   </div>
 
-  <hr />
-  <br />
 
   <div class="form-row">
     <div class="actions form-group col-md-12">

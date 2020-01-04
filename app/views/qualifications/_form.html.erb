@@ -11,33 +11,36 @@
     </div>
   <% end %>
 
-  <br />
-  <hr />
+  <p>Required fields are followed by <abbr title="Required">*</abbr></p>
 
   <div class="form-row">
-    <div class="form-group col-md-5">
-      <%= form.label :qual_obtained %> <br />
+    <div class="form-group col-md-8">
+      <%= form.label :qual_obtained %> <abbr title="Required" aria-label="required">*</abbr> <br />
       <%= form.text_field :qual_obtained , class: "form-control" %>
     </div>
 
-    <div class="form-group col-md-5">
-      <%= form.label :institution %> <br />
-      <%= form.text_field :institution, class: "form-control" %>
-    </div>
-
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-4">
       <%= form.label :nqf_level %> <br />
       <%= form.number_field :nqf_level, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-12">
+      <%= form.label :institution %> <abbr title="Required" aria-label="required">*</abbr> <br />
+      <%= form.text_field :institution, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
       <%= form.label :courses_passed %> <br />
       <%= form.text_area :courses_passed, class: "form-control" %>
     </div>
+  </div>
 
-    <div class="form-group col-md-6">
+  <div class="form-row">
+    <div class="form-group col-md-12">
       <%= form.label :major_subjects %> <br />
       <%= form.text_area :major_subjects, class: "form-control" %>
     </div>
@@ -46,21 +49,18 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <%= form.label :date_from %> <br />
-      <%= form.date_select :date_from, start_year: Date.today.year, end_year: 1970, class: "form-control", prompt: { day: 'Select day', month: 'Select month', year: 'Select year' } %>
+      <%= form.date_select :date_from, class: "form-control" %>
     </div>
 
     <div class="form-group col-md-6">
       <%= form.label :date_to %> <br />
-      <%= form.date_select :date_to, start_year: Date.today.year, end_year: 1970, class: "form-control", prompt: { day: 'Select day', month: 'Select month', year: 'Select year' } %>
+      <%= form.date_select :date_to, class: "form-control" %>
     </div>
   </div>
 
-  <div class="form-group">
+  <div>
     <%= form.hidden_field :person_id, :value => @person['id'], class: "form-control" %>
   </div>
-      
-  <hr />
-  <br />
 
   <div class="actions">
     <%= form.submit %>

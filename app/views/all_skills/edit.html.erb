@@ -1,7 +1,11 @@
 <div class="container">
-    <h1>Editing Skill</h1>
-
-    <%= render 'form', skill: @skill %>
-
-    <%= link_to 'Back', all_skill_path %>
+  <div class="row">
+    <div class="form-group col-md-8 col-md-offset-2">
+      <legend><h1>Editing Skill</h1></legend>
+  
+      <%= render 'form', skill: @skill %>
+  
+      <%= link_to 'Back', all_skill_path %>
+    </div>
+  </div>
 </div>
