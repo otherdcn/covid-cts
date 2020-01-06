@@ -1,8 +1,12 @@
 <div class="container">
-    <h1>Editing Details for: <%= @person.title + ' ' + @person.full_name %></h1>
-
-    <%= render 'form', person: @person %>
-
-    <%= link_to 'Show', @person %> |
-    <%= link_to 'Back', people_path %>
+  <div class="row">
+    <div class="form-group col-md-8 col-md-offset-2">
+      <legend><h1>Editing Details for: <%= @person.title + ' ' + @person.full_name %></h1></legend>
+  
+      <%= render 'form', person: @person %>
+  
+      <%= link_to 'Show', @person %> |
+      <%= link_to 'Back', people_path %>
+    </div>
+  </div>
 </div>

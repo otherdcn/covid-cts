@@ -11,39 +11,46 @@
     </div>
   <% end %>
 
-  <br />
-  <hr />
+  <p>Required fields are followed by <abbr title="Required">*</abbr></p>
 
   <div class="form-row">
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-12">
       <%= form.label :title %>
       <%= form.text_field :title, class: "form-control" %>
     </div>
-
-    <div class="form-group col-md-5">
-      <%= form.label :first_name %>
+  </div>
+  
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :first_name %> <abbr title="Required" aria-label="required">*</abbr>
       <%= form.text_field :first_name, class: "form-control" %>
     </div>
+  </div>
 
-    <div class="form-group col-md-5">
-      <%= form.label :last_name %>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :last_name %> <abbr title="Required" aria-label="required">*</abbr>
       <%= form.text_field :last_name, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-12">
       <%= form.label :dob %> <br />
       <%= form.date_select :dob, start_year: Date.today.year, end_year: 1945, class: "form-control", prompt: { day: 'Day', month: 'Month', year: 'Year' } %>
     </div>
+  </div>
 
-    <div class="form-group col-md-4">
-      <%= form.label :id_passport_number %>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :id_passport_number %> <abbr title="Required" aria-label="required">*</abbr>
       <%= form.text_field :id_passport_number, class: "form-control" %>
     </div>
+  </div>
 
-    <div class="form-group col-md-4">
-      <%= form.label :citizenship %> <br />
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :citizenship %> <abbr title="Required" aria-label="required">*</abbr> <br /> 
       <%= form.select :citizenship, @country_array.each { |country| [country,country] }, prompt: 'Select Country of Citizenship...' %>
     </div>
   </div>
@@ -60,12 +67,16 @@
       <%= form.label :permit_type %> <br />
       <%= form.text_field :permit_type, class: "form-control" %>
     </div>
+  </div>
 
+  <div class="form-row">
     <div class="form-group col-md-4">
       <%= form.label :permit_number %> <br />
       <%= form.text_field :permit_number, class: "form-control" %>
     </div>
+  </div>
 
+  <div class="form-row">
     <div class="form-group col-md-4">
       <%= form.label :permit_expiry_date %> <br />
       <%= form.date_select :permit_expiry_date, start_year: Date.today.year, end_year: Date.today.year+25, class: "form-control", prompt: { day: 'Day', month: 'Month', year: 'Year' } %>
@@ -78,8 +89,6 @@
       <%= form.select :sector_id, Sector.all.collect {|opt| [opt.sector, opt.id]}, prompt: 'Select Sector...'  %>
     </div>
   </div>
-
-  <hr />
 
   <div class="actions">
     <%= form.submit %>
