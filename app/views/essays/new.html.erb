@@ -1,7 +1,11 @@
 <div class="container">
-    <h1>New Essay for: <%= @person.title + ' ' + @person.full_name %></h1>
-
-    <%= render 'form', essay: @essay %>
-
-    <%= link_to 'Back', person_path(@person) %>
+  <div class="row">
+    <div class="form-group col-md-8 col-md-offset-2">
+      <legend><h1>New Essay for: <%= @person.title + ' ' + @person.full_name %></h1></legend>
+  
+      <%= render 'form', essay: @essay %>
+  
+      <%= link_to 'Back', person_path(@person) %>
+    </div>
+  </div>
 </div>

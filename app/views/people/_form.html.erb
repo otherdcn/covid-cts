@@ -34,7 +34,7 @@
   <div class="form-row">
     <div class="form-group col-md-4">
       <%= form.label :dob %> <br />
-      <%= form.date_select :dob, start_year: Date.today.year, end_year: 1945, class: "form-control", prompt: { day: 'Select day', month: 'Select month', year: 'Select year' } %>
+      <%= form.date_select :dob, start_year: Date.today.year, end_year: 1945, class: "form-control", prompt: { day: 'Day', month: 'Month', year: 'Year' } %>
     </div>
 
     <div class="form-group col-md-4">
@@ -68,7 +68,7 @@
 
     <div class="form-group col-md-4">
       <%= form.label :permit_expiry_date %> <br />
-      <%= form.date_select :permit_expiry_date, start_year: Date.today.year, end_year: Date.today.year+25, class: "form-control", prompt: { day: 'Select day', month: 'Select month', year: 'Select year' } %>
+      <%= form.date_select :permit_expiry_date, start_year: Date.today.year, end_year: Date.today.year+25, class: "form-control", prompt: { day: 'Day', month: 'Month', year: 'Year' } %>
     </div>
   </div>
 

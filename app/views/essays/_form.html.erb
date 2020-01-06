@@ -11,19 +11,18 @@
     </div>
   <% end %>
 
-  <br />
-  <hr />
+  <p>Required fields are followed by <abbr title="Required">*</abbr></p>
 
   <div class="form-row">
     <div class="form-group col-md-12">
-      <%= form.label :understanding_nipam_role %> <br />
+      <%= form.label :understanding_nipam_role %> <abbr title="Required" aria-label="required">*</abbr> <br />
       <%= form.text_area :understanding_nipam_role, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-12">
-      <%= form.label :candidate_suitability%> <br />
+      <%= form.label :candidate_suitability%> <abbr title="Required" aria-label="required">*</abbr> <br />
       <%= form.text_area :candidate_suitability, class: "form-control" %>
     </div>
   </div>

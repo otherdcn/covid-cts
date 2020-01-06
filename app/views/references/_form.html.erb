@@ -11,28 +11,29 @@
     </div>
   <% end %>
 
-  <br />
-  <hr />
+  <p>Required fields are followed by <abbr title="Required">*</abbr></p>
 
   <div class="form-row">
     <div class="form-group col-md-12">
-      <%= form.label :full_name %> <br />
+      <%= form.label :full_name %> <abbr title="Required" aria-label="required">*</abbr> <br />
       <%= form.text_field :full_name, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-4">
-      <%= form.label :email %> <br />
+    <div class="form-group col-md-12">
+      <%= form.label :email %> <abbr title="Required" aria-label="required">*</abbr> <br />
       <%= form.text_field :email, class: "form-control" %>
     </div>
+  </div>
 
-    <div class="form-group col-md-4">
+  <div class="form-row">
+    <div class="form-group col-md-6">
       <%= form.label :mobile %> <br />
       <%= form.number_field :mobile, class: "form-control" %>
     </div>
 
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-6">
       <%= form.label :telephone %> <br />
       <%= form.number_field :telephone, class: "form-control" %>
     </div>
@@ -40,7 +41,7 @@
 
   <div class="form-row">
     <div class="form-group col-md-12">
-      <%= form.label :employer %> <br />
+      <%= form.label :employer %> <abbr title="Required" aria-label="required">*</abbr> <br />
       <%= form.text_field :employer, class: "form-control" %>
     </div>
   </div>

@@ -1,7 +1,11 @@
 <div class="container">
-    <h1>Editing Reference for: <%= @person.title + ' ' +@person.full_name %></h1>
+  <div class="row">
+    <div class="form-group col-md-8 col-md-offset-2">
+      <legend><h1>Editing Reference for: <%= @person.title + ' ' +@person.full_name %></h1></legend>
 
-    <%= render 'form', reference: @reference %>
+      <%= render 'form', reference: @reference %>
 
-    <%= link_to 'Back', person_path(@person) %>
+      <%= link_to 'Back', person_path(@person) %>
+    </div>
+  </div>
 </div>
