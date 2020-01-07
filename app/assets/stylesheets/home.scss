@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .container {
-    padding-top: 32px;
+    padding-top: 65px;
 }
 
 .footer {
@@ -14,4 +14,8 @@
     color: white;
     text-align: center;
     position: fixed;
+}
+
+.panel-heading {
+    text-align: center;
 }
