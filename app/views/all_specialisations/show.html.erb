@@ -26,6 +26,6 @@
     <%= @specialisation.category.category %>
   </p>
 
-  <%= link_to 'Edit', edit_person_specialisation_path(@specialisation.person, @specialisation) %> |
-  <%= link_to 'Back', all_specialisations_path %>
+  <%= link_to 'Edit', edit_person_specialisation_path(@specialisation.person, @specialisation), class: "btn btn-primary" %> |
+  <%= link_to 'Back', all_specialisations_path, class: "btn btn-primary" %>
 </div>

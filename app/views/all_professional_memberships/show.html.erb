@@ -17,6 +17,6 @@
   <%= @professional_membership.registration_number %>
 </p>
 
-<%= link_to 'Edit', edit_person_professional_membership_path(@professional_membership.person, @professional_membership) %> |
-<%= link_to 'Back', all_professional_memberships_path %>
+<%= link_to 'Edit', edit_person_professional_membership_path(@professional_membership.person, @professional_membership), class: 'btn btn-primary' %> |
+<%= link_to 'Back', all_professional_memberships_path, class: 'btn btn-primary' %>
 </div>
