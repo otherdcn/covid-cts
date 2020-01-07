@@ -37,6 +37,6 @@
     <%= @contact.email %>
   </p>
 
-  <%= link_to 'Edit', edit_person_contact_path(@person, @contact) %> |
-  <%= link_to 'Back', person_path(@person) %>
+  <%= link_to 'Edit', edit_person_contact_path(@person, @contact), class: 'btn btn-primary' %> |
+  <%= link_to 'Back', person_path(@person), class: 'btn btn-primary' %>
 </div>

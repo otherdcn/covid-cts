@@ -37,7 +37,7 @@
               <td><%= person.citizenship %></td>
               <td><%= person.permit_type.empty? ? "N/A" : "Yes" %></td>
               <td><%= person.sector.nil? ? "N/A" : person.sector.sector_name %></td>
-              <td><%= link_to 'Show', person %></td>
+              <td><%= link_to 'View Details', person %></td>
               <td><%= link_to 'Edit', edit_person_path(person) %></td>
             </tr>
 
@@ -50,6 +50,6 @@
   </div>
   
   <br>
-  <%= link_to 'New Person', new_person_path %>
+  <%= link_to 'New Person', new_person_path, class: 'btn btn-primary' %>
 
 </div>

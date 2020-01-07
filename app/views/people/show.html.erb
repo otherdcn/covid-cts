@@ -70,9 +70,9 @@
           </p>
         <% end %>
         <br />
-        <%= link_to 'Edit', edit_person_path(@person) %> |
-        <%= link_to 'Remove', [@person], method: :delete, data: { confirm: 'This is not a reversible procedure! Are you sure?' } %> |
-        <%= link_to 'Back', people_path %>
+        <%= link_to 'Edit', edit_person_path(@person), class: 'btn btn-primary' %> |
+        <%= link_to 'Remove', [@person], method: :delete, data: { confirm: 'This is not a reversible procedure! Are you sure?' }, class: 'btn btn-primary' %> |
+        <%= link_to 'Back', people_path, class: 'btn btn-primary' %>
       </div>
 
       <p id="notice"><%= notice %></p>
@@ -89,7 +89,7 @@
                   <%= render @person.contact %>
                 <% else %>
                   <p>No Contact Details Exist</p>
-                  <%= link_to 'Add Contact', new_person_contact_path(@person) %>
+                  <%= link_to 'Add Contact', new_person_contact_path(@person), class: 'btn btn-primary' %>
                 <% end %>
               </div>
             </div>
@@ -121,7 +121,7 @@
                       </tbody>
                     </table>
                 <% end %>
-                <%= link_to 'Add Specialisation', new_person_specialisation_path(@person) %>
+                <%= link_to 'Add Specialisation', new_person_specialisation_path(@person), class: 'btn btn-primary' %>
               </div>
             </div>
         </div>
@@ -152,7 +152,7 @@
                     </tbody>
                   </table>
                 <% end %>
-                <%= link_to 'Add Language Proficiency', new_person_language_proficiency_path(@person) %>
+                <%= link_to 'Add Language Proficiency', new_person_language_proficiency_path(@person), class: 'btn btn-primary' %>
               </div>
             </div>
         </div>
@@ -181,7 +181,7 @@
                       </tbody>
                     </table>
                 <% end %>
-                <%= link_to 'Add Skill', new_person_skill_path(@person) %>
+                <%= link_to 'Add Skill', new_person_skill_path(@person), class: 'btn btn-primary' %>
               </div>
             </div>
         </div>
@@ -215,7 +215,7 @@
                
                    </table>
                <% end %>
-               <%= link_to 'Add Qualifications', new_person_qualification_path(@person) %>
+               <%= link_to 'Add Qualifications', new_person_qualification_path(@person), class: 'btn btn-primary' %>
               </div>
             </div>
         </div>
@@ -244,7 +244,7 @@
                       </tbody>
                     </table>
                 <% end %>
-                <%= link_to 'Add Membership', new_person_professional_membership_path(@person) %>
+                <%= link_to 'Add Membership', new_person_professional_membership_path(@person), class: 'btn btn-primary' %>
               </div>
             </div>
         </div>
@@ -277,7 +277,7 @@
                 
                     </table>
                 <% end %>
-                <%= link_to 'Add Previous Employment', new_person_employment_history_path(@person) %>
+                <%= link_to 'Add Previous Employment', new_person_employment_history_path(@person), class: 'btn btn-primary' %>
               </div>
             </div>
         </div>
@@ -293,7 +293,7 @@
                   <%= render @person.essay %>
                 <% else %>
                   <p>No Essay Exist</p>
-                  <%= link_to 'Add Essay', new_person_essay_path(@person) %>
+                  <%= link_to 'Add Essay', new_person_essay_path(@person), class: 'btn btn-primary' %>
                 <% end %>
               </div>
             </div>
@@ -326,14 +326,14 @@
                       </tbody>
                     </table>
                 <% end %>
-                <%= link_to 'Add Reference', new_person_reference_path(@person) %>
+                <%= link_to 'Add Reference', new_person_reference_path(@person), class: 'btn btn-primary' %>
               </div>
             </div>
         </div>
       </div>
       <hr />
       
-      <%= link_to 'Back', people_path %>
+      <%= link_to 'Back', people_path, class: 'btn btn-primary' %>
     </div>
   
   </div>

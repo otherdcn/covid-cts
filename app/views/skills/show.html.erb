@@ -17,6 +17,6 @@
     <%= @skill.get_rating %>
   </p>
 
-  <%= link_to 'Edit', edit_person_skill_path(@person, @skill) %> |
-  <%= link_to 'Back', person_path(@person) %>
+  <%= link_to 'Edit', edit_person_skill_path(@person, @skill), class: 'btn btn-primary' %> |
+  <%= link_to 'Back', person_path(@person), class: 'btn btn-primary' %>
 </div>

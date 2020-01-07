@@ -27,6 +27,6 @@
     <%= @language_proficiency.speak %>
   </p>
 
-  <%= link_to 'Edit', edit_person_language_proficiency_path(@person, @language_proficiency) %> |
-  <%= link_to 'Back', person_path(@person) %>
+  <%= link_to 'Edit', edit_person_language_proficiency_path(@person, @language_proficiency), class: 'btn btn-primary' %> |
+  <%= link_to 'Back', person_path(@person), class: 'btn btn-primary' %>
 </div>
