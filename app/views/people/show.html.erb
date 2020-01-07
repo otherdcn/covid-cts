@@ -1,293 +1,335 @@
 <!--  -->
-  <div class="container-fluid">
-    <div class="row content">
+<div class="container-fluid">
+  <div class="row content">
+    
+    <div class="container col-sm-2">
+      <!-- Sidebar navigation here! -->
+      <p>text here!1</p>
+      <p>text here!2</p>
+      <ul class="nav nav-pills nav-stacked nav-fixed-stack">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Menu 1</a></li>
+        <li><a href="#">Menu 2</a></li>
+        <li><a href="#">Menu 3</a></li>
+      </ul>
+    </div>
+
+    <div class="container col-sm-10">
       
-      <div class="container col-sm-2 sidenav">
-        <!-- Sidebar navigation here! -->
-        <p></p>
-      </div>
-
-      <div class="container col-sm-10">
-
-        <p id="notice"><%= notice %></p>
-        <!-- Person Deatils -->
-        <div id="personal-details">
-          <h1>
-            <strong>
-            <%= @person.title %> <%= @person.full_name %>
-            </strong>
-          </h1>
-
-          <p>
-            <strong>Date of Birth:</strong>
-            <%= @person.dob %>
-          </p>
-
-          <p>
-            <strong>Identification Number:</strong>
-            <%= @person.id_passport_number %>
-          </p>
-
-          <p>
-            <strong>Citizenship:</strong>
-            <%= @person.citizenship %>
-          </p>
-
-          <% if !(@person.permit_type.empty?)  %>
-              <p>
-                <strong>Permit Type:</strong>
-                <%= @person.permit_type %>
-              </p>
-
-              <p>
-                <strong>Permit Number:</strong>
-                <%= @person.permit_number %>
-              </p>
-
-              <p>
-                <strong>Permit Expiry Date:</strong>
-                <%= @person.permit_expiry_date %>
-              </p>
-          <% end %>
-
-          <p>
-            <strong>Residential:</strong>
-            <%= @person.residential_address %>
-          </p>
-
-          <% if @person.sector.nil? %>
+      <!-- Person Deatils -->
+      <div id="personal-details" class="jumbotron">
+        <h1>
+          <strong>
+          <%= @person.title %> <%= @person.full_name %>
+          </strong>
+        </h1>
+        <p>
+          <strong>Date of Birth:</strong>
+          <%= @person.dob %>
+        </p>
+        <p>
+          <strong>Identification Number:</strong>
+          <%= @person.id_passport_number %>
+        </p>
+        <p>
+          <strong>Citizenship:</strong>
+          <%= @person.citizenship %>
+        </p>
+        <% if !(@person.permit_type.empty?)  %>
             <p>
-              <strong>Sector:</strong>
-              N/A
+              <strong>Permit Type:</strong>
+              <%= @person.permit_type %>
             </p>
-          <% else %>
             <p>
-              <strong>Sector:</strong>
-              <%= @person.sector.sector_name %>
+              <strong>Permit Number:</strong>
+              <%= @person.permit_number %>
             </p>
-          <% end %>
-          <br />
-          <%= link_to 'Edit', edit_person_path(@person) %> |
-          <%= link_to 'Remove', [@person], method: :delete, data: { confirm: 'This is not a reversible procedure! Are you sure?' } %> |
-          <%= link_to 'Back', people_path %>
-        </div>
-
-        <hr />
-
-        <!-- Contact Details -->
-        <div id="contact" class="table-responsive text-nowrap">
-          <h3> Contact Details: </h3>
-          <% if @person.contact %>
-            <%= render @person.contact %>
-          <% else %>
-            <p>No Contact Details Exist</p>
-            <%= link_to 'Add Contact', new_person_contact_path(@person) %>
-          <% end %>
-        </div>
-
-        <!-- Specialisations -->
-        <div id="specialisations" class="table-responsive text-nowrap">
-          <h3> Specialisations: </h3>
-          <% if @person.specialisations.empty? %>
-            <p>No Specialisations Exist</p>
-          <% else %>
-              <table id="specialisation-table" class="display">
-
-                <thead>
-                  <tr>
-                    <th>Field</th>
-                    <th>Level</th>
-                    <th>Station Duty</th>
-                    <th>Category</th>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <%= render @person.specialisations %>
-                </tbody>
-              </table>
-
-          <% end %>
-          <%= link_to 'Add Specialisation', new_person_specialisation_path(@person) %>
-        </div>
-
-        <!-- Languages -->
-        <div id="languages" class="table-responsive text-nowrap">
-          <h3> Languages: </h3>
-          <% if @person.language_proficiencies.empty? %>
-            <p>No Language Proficiencies Exist</p>
-          <% else %>
-            <table id="langproficiencies-table" class="display">
-              <thead>
-                <tr>
-                  <th>Language</th>
-                  <th>Read</th>
-                  <th>Write</th>
-                  <th>Speak</th>
-                  <th></th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <%= render @person.language_proficiencies %>
-              </tbody>
-            </table>
-          <% end %>
-          <%= link_to 'Add Language Proficiency', new_person_language_proficiency_path(@person) %>
-        </div>
-
-        <!-- Skills and Competencies -->
-        <div id="skills" class="table-responsive text-nowrap">
-          <h3> Skills and Competencies: </h3>
-          <% if @person.skills.empty? %>
-            <p>No Skills and Competencies Exist</p>
-          <% else %>
-              <table id="skills-table" class="display">
-                <thead>
-                  <tr>
-                    <th>Skill</th>
-                    <th>Rating</th>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <%= render @person.skills %>
-                </tbody>
-              </table>
-
-          <% end %>
-          <%= link_to 'Add Skill', new_person_skill_path(@person) %>
-        </div>
-
-        <!-- Qualifications -->
-        <div id="qualifications" class="table-responsive text-nowrap">
-          <h3> Qualifications: </h3>
-          <% if @person.qualifications.empty? %>
-            <p>No Qualifications Exist</p>
-          <% else %>
-
-              <table id="qualifications-table" class="display">
-
-                <thead>
-                  <tr>
-                    <th>Qualification</th>
-                    <th>Institution</th>
-                    <th>NQF Level</th>
-                    <th>Start</th>
-                    <th>End</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <%= render @person.qualifications %>
-                </tbody>
-          
-              </table>
-
-          <% end %>
-          <%= link_to 'Add Qualifications', new_person_qualification_path(@person) %>
-        </div>
-
-        <!-- Professional Memberships -->
-        <div id="professional-memberships" class="table-responsive text-nowrap">
-          <h3> Professional Memberships: </h3>
-          <% if @person.professional_memberships.empty? %>
-            <p>No Specialisation Exist</p>
-          <% else %>
-              <table id="professionalmembership-table" class="display">
-                <thead>
-                  <tr>
-                    <th>Professional Body</th>
-                    <th>Registration Number</th>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <%= render @person.professional_memberships %>
-                </tbody>
-              </table>
-
-          <% end %>
-          <%= link_to 'Add Membership', new_person_professional_membership_path(@person) %>
-        </div>
-
-        <!-- Employment History -->
-        <div id="employment-histories" class="table-responsive text-nowrap">
-          <h3> Employment History: </h3>
-          <% if @person.employment_histories.empty? %>
-            <p>No Employment History Exist</p>
-          <% else %>
-              <table id="emphistories-table" class="display">
-                <thead>
-                  <tr>
-                    <th>Organisation/Institution</th>
-                    <th>From</th>
-                    <th>Till</th>
-                    <th>Position Held</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <%= render @person.employment_histories %>
-                </tbody>
-
-          
-              </table>
-
-          <% end %>
-          <%= link_to 'Add Previous Employment', new_person_employment_history_path(@person) %>
-        </div>
-
-        <!-- Essay -->
-        <div id="essay" class="table-responsive text-nowrap">
-          <h3> Essay: </h3>
-          <% if @person.essay %>
-            <%= render @person.essay %>
-          <% else %>
-            <p>No Essay Exist</p>
-            <%= link_to 'Add Essay', new_person_essay_path(@person) %>
-          <% end %>
-        </div>
-
-        <!-- References -->
-        <div id="references" class="table-responsive text-nowrap">
-          <h3> References: </h3>
-          <% if @person.references.empty? %>
-            <p>No References Exist</p>
-          <% else %>
-              <table id="references-table" class="display">
-                <thead>
-                  <tr>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <th>Mobile</th>
-                    <th>Telephone</th>
-                    <th>Employer</th>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                </thead>
-                  <%= render @person.references %>
-                <tbody>
-                </tbody>
-              </table>
-
-          <% end %>
-          <%= link_to 'Add Reference', new_person_reference_path(@person) %>
-        </div>
-
-        <hr />
+            <p>
+              <strong>Permit Expiry Date:</strong>
+              <%= @person.permit_expiry_date %>
+            </p>
+        <% end %>
+        <p>
+          <strong>Residential:</strong>
+          <%= @person.residential_address %>
+        </p>
+        <% if @person.sector.nil? %>
+          <p>
+            <strong>Sector:</strong>
+            N/A
+          </p>
+        <% else %>
+          <p>
+            <strong>Sector:</strong>
+            <%= @person.sector.sector_name %>
+          </p>
+        <% end %>
+        <br />
+        <%= link_to 'Edit', edit_person_path(@person) %> |
+        <%= link_to 'Remove', [@person], method: :delete, data: { confirm: 'This is not a reversible procedure! Are you sure?' } %> |
         <%= link_to 'Back', people_path %>
       </div>
-    
+
+      <p id="notice"><%= notice %></p>
+      
+      <hr />
+      
+      <!-- Contact Details -->
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3> Contact Details: </h3></div>
+            <div class="panel-body">
+              <div id="contact" class="table-responsive text-nowrap">
+                <% if @person.contact %>
+                  <%= render @person.contact %>
+                <% else %>
+                  <p>No Contact Details Exist</p>
+                  <%= link_to 'Add Contact', new_person_contact_path(@person) %>
+                <% end %>
+              </div>
+            </div>
+        </div>
+      </div>
+      
+      <!-- Specialisations -->
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3> Specialisations: </h3></div>
+            <div class="panel-body">
+              <div id="specialisations" class="table-responsive text-nowrap">
+                <% if @person.specialisations.empty? %>
+                  <p>No Specialisations Exist</p>
+                <% else %>
+                    <table id="specialisation-table" class="display">
+                      <thead>
+                        <tr>
+                          <th>Field</th>
+                          <th>Level</th>
+                          <th>Station Duty</th>
+                          <th>Category</th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <%= render @person.specialisations %>
+                      </tbody>
+                    </table>
+                <% end %>
+                <%= link_to 'Add Specialisation', new_person_specialisation_path(@person) %>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3> Languages: </h3></div>
+            <div class="panel-body">
+              <div id="languages" class="table-responsive text-nowrap">
+                <% if @person.language_proficiencies.empty? %>
+                  <p>No Language Proficiencies Exist</p>
+                <% else %>
+                  <table id="langproficiencies-table" class="display">
+                    <thead>
+                      <tr>
+                        <th>Language</th>
+                        <th>Read</th>
+                        <th>Write</th>
+                        <th>Speak</th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <%= render @person.language_proficiencies %>
+                    </tbody>
+                  </table>
+                <% end %>
+                <%= link_to 'Add Language Proficiency', new_person_language_proficiency_path(@person) %>
+              </div>
+            </div>
+        </div>
+      </div>
+      
+      <!-- Skills and Competencies -->
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3> Skills and Competencies: </h3></div>
+            <div class="panel-body">
+              <div id="skills" class="table-responsive text-nowrap">
+                <% if @person.skills.empty? %>
+                  <p>No Skills and Competencies Exist</p>
+                <% else %>
+                    <table id="skills-table" class="display">
+                      <thead>
+                        <tr>
+                          <th>Skill</th>
+                          <th>Rating</th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <%= render @person.skills %>
+                      </tbody>
+                    </table>
+                <% end %>
+                <%= link_to 'Add Skill', new_person_skill_path(@person) %>
+              </div>
+            </div>
+        </div>
+      </div>
+      
+      <!-- Qualifications -->
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3> Qualifications: </h3></div>
+            <div class="panel-body">
+              <div id="qualifications" class="table-responsive text-nowrap">
+               <% if @person.qualifications.empty? %>
+                 <p>No Qualifications Exist</p>
+               <% else %>
+                   <table id="qualifications-table" class="display">
+                     <thead>
+                       <tr>
+                         <th>Qualification</th>
+                         <th>Institution</th>
+                         <th>NQF Level</th>
+                         <th>Start</th>
+                         <th>End</th>
+                         <th></th>
+                         <th></th>
+                         <th></th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <%= render @person.qualifications %>
+                     </tbody>
+               
+                   </table>
+               <% end %>
+               <%= link_to 'Add Qualifications', new_person_qualification_path(@person) %>
+              </div>
+            </div>
+        </div>
+      </div>
+      
+      <!-- Professional Memberships -->
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3> Professional Memberships: </h3></div>
+            <div class="panel-body">
+              <div id="professional-memberships" class="table-responsive text-nowrap">
+                <% if @person.professional_memberships.empty? %>
+                  <p>No Specialisation Exist</p>
+                <% else %>
+                    <table id="professionalmembership-table" class="display">
+                      <thead>
+                        <tr>
+                          <th>Professional Body</th>
+                          <th>Registration Number</th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <%= render @person.professional_memberships %>
+                      </tbody>
+                    </table>
+                <% end %>
+                <%= link_to 'Add Membership', new_person_professional_membership_path(@person) %>
+              </div>
+            </div>
+        </div>
+      </div>
+      
+      <!-- Employment History -->
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3> Employment History: </h3></div>
+            <div class="panel-body">
+              <div id="employment-histories" class="table-responsive text-nowrap">
+                <% if @person.employment_histories.empty? %>
+                  <p>No Employment History Exist</p>
+                <% else %>
+                    <table id="emphistories-table" class="display">
+                      <thead>
+                        <tr>
+                          <th>Organisation/Institution</th>
+                          <th>From</th>
+                          <th>Till</th>
+                          <th>Position Held</th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <%= render @person.employment_histories %>
+                      </tbody>
+                
+                    </table>
+                <% end %>
+                <%= link_to 'Add Previous Employment', new_person_employment_history_path(@person) %>
+              </div>
+            </div>
+        </div>
+      </div>
+      
+      <!-- Essay -->
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3> Essay: </h3></div>
+            <div class="panel-body">
+              <div id="essay" class="table-responsive text-nowrap">
+                <% if @person.essay %>
+                  <%= render @person.essay %>
+                <% else %>
+                  <p>No Essay Exist</p>
+                  <%= link_to 'Add Essay', new_person_essay_path(@person) %>
+                <% end %>
+              </div>
+            </div>
+        </div>
+      </div>
+      
+      <!-- References -->
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3> References: </h3></div>
+            <div class="panel-body">
+              <div id="references" class="table-responsive text-nowrap">
+                <% if @person.references.empty? %>
+                  <p>No References Exist</p>
+                <% else %>
+                    <table id="references-table" class="display">
+                      <thead>
+                        <tr>
+                          <th>Full Name</th>
+                          <th>Email</th>
+                          <th>Mobile</th>
+                          <th>Telephone</th>
+                          <th>Employer</th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                        <%= render @person.references %>
+                      <tbody>
+                      </tbody>
+                    </table>
+                <% end %>
+                <%= link_to 'Add Reference', new_person_reference_path(@person) %>
+              </div>
+            </div>
+        </div>
+      </div>
+      <hr />
+      
+      <%= link_to 'Back', people_path %>
     </div>
+  
   </div>
+</div>
