@@ -1,4 +1,5 @@
 class SectorsController < ApplicationController
+  skip_before_action :require_login, only: [:index, :show]
   before_action :set_sector, only: [:show, :edit, :update, :destroy]
 
   # GET /sectors

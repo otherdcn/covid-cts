@@ -1,4 +1,5 @@
 class SkillTypesController < ApplicationController
+  skip_before_action :require_login, only: [:index, :show]
   before_action :set_skill_type, only: [:show, :edit, :update, :destroy]
 
   # GET /skill_types

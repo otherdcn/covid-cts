@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  skip_before_action :require_login, only: [:index, :show]
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   # GET /categories
