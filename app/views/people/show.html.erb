@@ -6,12 +6,13 @@
       <!-- Sidebar navigation here! -->
       <nav class="navbar navbar-inverse navbar-fixed-side">
         <div class="container">
-          <a>
-            <span id="showallexperts" class="glyphicon glyphicon-arrow-left">
-              <%= link_to 'Show all Experts', people_path %>
-            </span>
-          </a>
           <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="/people">
+                <span id="showallexperts" class="glyphicon glyphicon-arrow-left"></span>
+                All Experts
+              </a>
+            </li>
             <li><a href="#contact">Contact Details</a></li>
             <li><a href="#specialisations">Specialisations</a></li>
             <li><a href="#languages">Languages</a></li>

@@ -6,7 +6,11 @@
     margin-top: 50px;
 }
 
-// Sidebar Navigation
+/* 
+
+Sidebar Navigation 
+
+*/
 
 .navbar-inverse {
     background-color: #004078;
@@ -20,7 +24,7 @@
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus {
     color: #ffffff;
-    background-color: #02559e;   
+    background-color: #02559e; 
 }
 
 .navbar-inverse .navbar-nav > .active > a:hover {
@@ -42,19 +46,19 @@
 }
 
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-    color: #ddd4d4;
+    color: #dd16c6;
 }
  
 .navbar-inverse .navbar-nav > li > .dropdown-menu {
-    background-color: #004078;
+    background-color: #227800;
 }
  
 .navbar-inverse .navbar-nav > li > .dropdown-menu > li > a {
-    color: #ffffff;
+    color: #f01414;
 }
  
 .navbar-inverse .navbar-nav > li > .dropdown-menu > li > a:hover,
 .navbar-inverse .navbar-nav > li > .dropdown-menu > li > a:focus {
-    color: #ffffff;
-    background-color: #0369c2; 
+    color: #640808;
+    background-color: #5fc203; 
 }
