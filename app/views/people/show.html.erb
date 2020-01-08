@@ -1,17 +1,17 @@
 <!--  -->
 <div class="container-fluid">
-  <div class="row content">
+  <div class="row">
     
     <div class="col-sm-2">
-      <div class="container">
-        <!-- Sidebar navigation here! -->  
-        <div class="affix">
+      <!-- Sidebar navigation here! -->
+      <nav class="navbar navbar-inverse navbar-fixed-side">
+        <div class="container">
           <a>
-            <span class="glyphicon glyphicon-arrow-left">
-              <%= link_to 'Back to All Experts', people_path %>
+            <span id="showallexperts" class="glyphicon glyphicon-arrow-left">
+              <%= link_to 'Show all Experts', people_path %>
             </span>
           </a>
-          <ul class="nav">
+          <ul class="nav navbar-nav">
             <li><a href="#contact">Contact Details</a></li>
             <li><a href="#specialisations">Specialisations</a></li>
             <li><a href="#languages">Languages</a></li>
@@ -23,7 +23,7 @@
             <li><a href="#references">References</a></li>
           </ul>
         </div>
-      </div>
+      </nav>
     </div>
 
     <div class="container col-sm-10">
