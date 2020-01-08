@@ -6,7 +6,22 @@
     padding-top: 65px;
 }
 
-// Navigation bar rules
+/*
+
+Main rules
+
+*/
+
+.main {
+    padding-bottom: 150px;
+}
+
+
+/* 
+
+Navigation bar rules 
+
+*/
 
 .navbar-default {
     background-color: #004078;
@@ -60,13 +75,10 @@
 
 // Footer rules 
 .footer {
-    left: 0;
-    bottom: 0;
-    width: 100%;
     background-color: #004078;;
     color: white;
-    text-align: center;
-    position: fixed;
+    text-align: left;
+    position: relative;
 }
 
 .panel-heading h3 {
