@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'people#index'
   get 'home/index'
   resources :people do
     resources :contacts
