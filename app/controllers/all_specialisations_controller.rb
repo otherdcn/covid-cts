@@ -1,4 +1,5 @@
 class AllSpecialisationsController < ApplicationController
+  skip_before_action :require_login, only: [:index, :show]
   before_action :initialize_level
   before_action :set_specialisation, only: [:show, :edit, :update, :destroy]
   

@@ -1,4 +1,5 @@
 class AllQualificationsController < ApplicationController
+  skip_before_action :require_login, only: [:index, :show]
   before_action :set_qualification, only: [:show, :edit, :update, :destroy]
   # GET /qualifications
   # GET /qualifications.json

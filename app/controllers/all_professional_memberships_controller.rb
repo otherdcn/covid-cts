@@ -1,4 +1,5 @@
 class AllProfessionalMembershipsController < ApplicationController
+  skip_before_action :require_login, only: [:index, :show]
   before_action :set_professional_membership, only: [:show, :edit, :update, :destroy]
 
   # GET /professional_memberships

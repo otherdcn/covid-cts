@@ -1,4 +1,5 @@
 class PeopleController < ApplicationController
+  skip_before_action :require_login, only: [:index, :show]
   before_action :set_person, only: [:show, :edit, :update, :destroy]
 
   # GET /people
