@@ -6,6 +6,63 @@
     padding-top: 65px;
 }
 
+// Navigation bar rules
+
+
+//.navbar-default, .navbar-brand, .active, .dropdown-toggle, .dropdown-menu, .glyphicon {
+//    color: #ffffff;
+//}
+
+.navbar-default {
+    background-color: #004078;
+}
+
+.navbar-default .navbar-brand {
+    background-color: #004078;
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color: #02559e;   
+}
+
+.navbar-default .navbar-nav > .active > a:hover {
+    color: #ddd4d4;
+    background-color: #02559e;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #ddd4d4;
+}
+
+.navbar-default .navbar-text {
+    color: #ffffff;   
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;   
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #ddd4d4;
+}
+ 
+.navbar-default .navbar-nav > li > .dropdown-menu {
+    background-color: #004078;
+}
+ 
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+    color: #ffffff;
+}
+ 
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+    color: #ffffff;
+    background-color: #0369c2; 
+}
+
+// Footer rules 
 .footer {
     left: 0;
     bottom: 0;
