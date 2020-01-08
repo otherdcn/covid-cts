@@ -6,7 +6,11 @@
       <div class="container">
         <!-- Sidebar navigation here! -->  
         <div class="affix">
-          <span><%= link_to 'Back to All Experts', people_path %></span>
+          <a>
+            <span class="glyphicon glyphicon-arrow-left">
+              <%= link_to 'Back to All Experts', people_path %>
+            </span>
+          </a>
           <ul class="nav">
             <li><a href="#contact">Contact Details</a></li>
             <li><a href="#specialisations">Specialisations</a></li>
@@ -334,8 +338,7 @@
         </div>
       </div>
       <hr />
-      
-      <%= link_to 'Back', people_path, class: 'btn btn-primary' %>
+
     </div>
   
   </div>
