@@ -36,7 +36,7 @@
 
   <div class="form-row">
     <div class="form-group col-md-12">
-      <%= form.label :station_duty %><br />
+      <%= form.label :station_duty %> <abbr title="Required" aria-label="required">*</abbr> <br />
       <%= form.select :station_duty, @namibian_cities.each { |city| [city,city]}, prompt: 'Select City/Town...'  %>
   </div>
 
