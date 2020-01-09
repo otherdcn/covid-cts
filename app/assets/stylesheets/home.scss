@@ -2,20 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container {
-    padding-top: 65px;
-}
-
 /*
 
 Main rules
 
 */
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.container {
+    padding-top: 65px;
+}
+
 .main {
     padding-bottom: 150px;
 }
 
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #004078;
+    color: white;
+    text-align: left;
+}
 
 /* 
 
@@ -73,16 +90,9 @@ Navigation bar rules
     background-color: #0369c2; 
 }
 
-// Footer rules 
-.footer {
-    background-color: #004078;;
-    color: white;
-    text-align: left;
-    position: relative;
-}
-
 .panel-heading h3 {
     text-align: center;
     font-weight: bold;
     font-size: 25px;
 }
+
