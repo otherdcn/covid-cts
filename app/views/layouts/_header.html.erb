@@ -1,7 +1,80 @@
 <header>
-<% if current_user %>
-  <%= render 'layouts/logged_in' %>
-<% else %>
-  <%= render 'layouts/logged_out' %>
-<% end %>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    
+    <div class="nav navbar-nav navbar-center">
+      <a class="navbar-brand" href="/"><%= image_tag("nipam-logo.png", alt: 'NIPAM') %></a>
+    </div>
+    
+    <div class="container-fluid">
+  
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+      </div>
+      
+      <div class="navbar-collapse collapse">
+  
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+          <li class="dropdown">
+            <a href='#' class='dropdown-toggle' data-toggle='dropdown'>
+              Resource Pool <span class='caret'></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="/all_specialisations">Specialisations</a></li>
+              <li><a href="/all_qualifications">Qualifications</a></li>
+              <li><a href="/all_skills">Skills and Competencies</a></li>
+              <li><a href="/all_professional_memberships">Professional Memberships</a></li>
+              <li class='divider'></li>
+              <li><a href="/people">Experts</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href='#' class='dropdown-toggle' data-toggle='dropdown'>
+              More <span class='caret'></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="/categories">Category</a></li>
+              <li><a href="/sectors">Sector</a></li>
+              <li><a href="/skill_types">Skill Type</a></li>
+              <li><a href="/fields">Specialisation Fields</a></li>
+            </ul>
+          </li>
+        </ul>
+        
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+              <a href="/#"><span class="glyphicon glyphicon-user"></span>
+              <%= current_user.email %>
+              </a>
+              </li>
+              
+              <li>
+              <a id="login-a" href="/logout"><span class="glyphicon glyphicon-log-out"></span>
+              Logout
+              </a>
+              </li>
+            </ul>
+          <% else %>
+            <li>
+              <a href="/signup"><span class="glyphicon glyphicon-user"></span>
+              Sign Up
+              </a>
+            </li>
+            
+            <li>
+              <a id="login-a" href="/login"><span class="glyphicon glyphicon-log-in"></span>
+              Login
+              </a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </header>
