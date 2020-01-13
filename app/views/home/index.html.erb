@@ -8,7 +8,17 @@
 
 <section class="container">
 
-  <p id="notice"><%= notice %></p>
+  <% flash.each do |type,msg| %>
+    <% if type == 'notice' %>
+      <div class="alert alert-success">
+    <% elsif type == 'alert' %>
+      <div class="alert alert-danger">
+    <% else %>
+      <div class="alert alert-info">
+    <% end %>
+      <p id="<%= type %>"><%= msg %></p>
+    </div>
+  <% end %>
 
   <div class="form-row">
     <!-- Specialisations -->
