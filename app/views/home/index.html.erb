@@ -8,18 +8,7 @@
 
 <section class="container">
 
-  <% flash.each do |type,msg| %>
-    <% if type == 'notice' %>
-      <div class="alert alert-success">
-    <% elsif type == 'alert' %>
-      <div class="alert alert-danger">
-    <% else %>
-      <div class="alert alert-info">
-    <% end %>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <p id="<%= type %>"><%= msg %></p>
-    </div>
-  <% end %>
+  <%= render '/layouts/alerts' %>
 
   <div class="form-row">
     <!-- Specialisations -->
