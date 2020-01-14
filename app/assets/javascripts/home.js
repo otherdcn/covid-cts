@@ -4,4 +4,11 @@
 
 $(document).on('turbolinks:load', function () {
   $('#static-table').DataTable();
+
+  $(".alert-success").fadeTo(5000, 500).slideUp(500, function(){
+    $(".alert").slideUp(500);
+  });
+  $(".alert-warning, .alert-danger, .alert-info").fadeTo(15000, 500).slideUp(500, function(){
+    $(".alert").slideUp(500);
+  });
 } );
