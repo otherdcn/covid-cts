@@ -63,16 +63,17 @@ header {
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus {
     color: #ffffff;
-    background-color: #004078;
+    background-color: #02559e;
+    border-radius: 10px;
 }
 
 .navbar-default .navbar-nav > .active > a:hover {
-    color: #ddd4d4;
+    color: #ffffff;
     background-color: #004078;
 }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-    color: #ddd4d4;
+    color: #ffffff;
 }
 
 .navbar-default .navbar-text {
@@ -90,13 +91,15 @@ header {
 
 .navbar-default .navbar-nav > li > a {
     color: #ffffff;
-    background-color: #004078;
+    background-color: #02559e;
     position: relative;
+    border-radius: 10px;
+    margin-left: 2px; margin-right: 2px;
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: #ddd4d4;
-    background-color: #02559e;
+    color: #ffffff;
+    background-color: #004078;
 }
  
 .navbar-default .navbar-nav > li > .dropdown-menu {
@@ -110,7 +113,7 @@ header {
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
     color: #ffffff;
-    background-color: #004078; 
+    background-color: #02559e; 
 }
 
 .panel-heading h3 {
