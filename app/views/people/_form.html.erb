@@ -85,7 +85,7 @@
 
   <div class="form-row">
     <div class="form-group col-md-12">
-      <%= form.label 'Sector' %> <br />
+      <%= form.label 'Sector' %> <abbr title="Required" aria-label="required">*</abbr> <br />
       <%= form.select :sector_id, Sector.all.collect {|opt| [opt.sector, opt.id]}, prompt: 'Select Sector...'  %>
     </div>
   </div>
