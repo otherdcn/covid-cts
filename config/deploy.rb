@@ -8,7 +8,7 @@ set :repo_url, "git@github.com:Oz-42/nipam-expert-rp.git"
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/deploy/#{fetch :application}"
+set :deploy_to, "/home/nipam/#{fetch :application}"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -24,7 +24,7 @@ set :deploy_to, "/home/deploy/#{fetch :application}"
 # append :linked_files, "config/database.yml"
 
 # Default value for linked_dirs is []
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
