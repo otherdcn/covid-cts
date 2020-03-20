@@ -10,7 +10,6 @@
             <th>Sector</th>
             <th></th>
             <th></th>
-            <th></th>
           </tr>
         </thead>
       
@@ -18,7 +17,6 @@
           <% @sectors.each do |sector| %>
             <tr>
               <td><%= sector.sector %></td>
-              <td><%= link_to 'Show', sector %></td>
               <td><%= link_to 'Edit', edit_sector_path(sector) %></td>
               <td><%= link_to 'Destroy', sector, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
