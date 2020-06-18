@@ -10,13 +10,15 @@
   </head>
 
   <body>
-      <%= render '/layouts/header' %>
-      
-      <div class="main">
-        <%= yield %>
-      </div>
-      
-      <%= render '/layouts/footer' %>
+    <% current_uri = request.env['PATH_INFO'] %>
+    
+    <%= render '/layouts/header' unless current_uri == '/new' %>
+    
+    <div class="main">
+      <%= yield %>
+    </div>
+    
+    <%= render '/layouts/footer' %>
   </body>
   
 </html>
