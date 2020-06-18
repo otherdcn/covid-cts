@@ -1,5 +1,6 @@
 class RegistersController < ApplicationController
   before_action :set_register, only: [:show, :edit, :update, :destroy]
+  before_action :set_purpose_list
 
   # GET /registers
   # GET /registers.json
@@ -66,6 +67,10 @@ class RegistersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_register
       @register = Register.find(params[:id])
+    end
+
+    def set_purpose_list
+      @purpose_list = ['Attending a conference','Attending a seminar','Attending a training programme','Official visit','Using Cafeteria', 'Other']
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
