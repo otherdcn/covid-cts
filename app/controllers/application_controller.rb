@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :initialize_country
   before_action :initialize_namibian_regions_and_cities
   helper_method :current_user
+  helper_method :current_uri
 
   def current_user
    if session[:user_id]
@@ -10,6 +11,10 @@ class ApplicationController < ActionController::Base
    else
      @current_user = nil
    end
+  end
+
+  def current_uri
+    @current_uri = request.env['PATH_INFO']
   end
 
   def logged_in?
