@@ -1,0 +1,54 @@
+<%= form_with(model: register, local: true) do |form| %>
+  <% if register.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(register.errors.count, "error") %> prohibited this register from being saved:</h2>
+
+      <ul>
+      <% register.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <p>Required fields are followed by <abbr title="Required">*</abbr></p>
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :name %> <abbr title="Required" aria-label="required">*</abbr>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :number %> <abbr title="Required" aria-label="required">*</abbr>
+      <%= form.number_field :number, class: "form-control"  %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :purpose %> <abbr title="Required" aria-label="required">*</abbr>
+      <%= form.text_field :purpose, class: "form-control"  %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label 'Location / Organisation' %> <abbr title="Required" aria-label="required">*</abbr>
+      <%= form.text_field :loc_org, class: "form-control"  %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :temperature %> <abbr title="Required" aria-label="required">*</abbr>
+      <%= form.text_field :temp, class: "form-control"  %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %> <hr />
+  </div>
+<% end %>

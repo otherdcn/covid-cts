@@ -1,0 +1,47 @@
+<div class="container">
+  <%= render '/layouts/alerts' %>
+  <p id="notice"><%= notice %></p>
+
+  <h1>Registers</h1>
+  <br />
+
+  <div class="row">
+    <div clas="col-md-12">
+      <table id="people-table" class="display">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Number</th>
+            <th>Date</th>
+            <th>Purpose</th>
+            <th>Location / Organisation</th>
+            <th>Temp</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @registers.each do |register| %>
+            <tr>
+              <td><%= register.name %></td>
+              <td><%= register.number %></td>
+              <td><%= register.created_at + 7200 %></td>
+              <td><%= register.purpose %></td>
+              <td><%= register.loc_org %></td>
+              <td><%= register.temp %></td>
+              <td><%= link_to 'Show', register %></td>
+              <td><%= link_to 'Edit', edit_register_path(register) %></td>
+              <td><%= link_to 'Destroy', register, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <br>
+  <%= link_to 'New Visit', new_register_path, class: 'btn btn-primary' %>
+
+</div>
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_14_155030) do
+ActiveRecord::Schema.define(version: 2020_06_18_075037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -57,6 +57,14 @@ ActiveRecord::Schema.define(version: 2019_12_14_155030) do
     t.datetime "updated_at", null: false
     t.index ["person_id"], name: "index_essays_on_person_id"
     t.index ["person_id"], name: "one_essay_for_one_person", unique: true
+  end
+
+  create_table "facility_useds", force: :cascade do |t|
+    t.string "facility"
+    t.bigint "visit_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["visit_id"], name: "index_facility_useds_on_visit_id"
   end
 
   create_table "fields", force: :cascade do |t|
@@ -130,6 +138,16 @@ ActiveRecord::Schema.define(version: 2019_12_14_155030) do
     t.index ["person_id"], name: "index_references_on_person_id"
   end
 
+  create_table "registers", force: :cascade do |t|
+    t.string "name"
+    t.integer "number"
+    t.string "purpose"
+    t.string "loc_org"
+    t.float "temp"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sectors", force: :cascade do |t|
     t.string "sector", null: false
     t.datetime "created_at", null: false
@@ -175,9 +193,27 @@ ActiveRecord::Schema.define(version: 2019_12_14_155030) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  create_table "visitors", force: :cascade do |t|
+    t.string "name"
+    t.integer "contact_number"
+    t.string "loc_org"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "visits", force: :cascade do |t|
+    t.float "temperature"
+    t.string "purpose"
+    t.bigint "visitor_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["visitor_id"], name: "index_visits_on_visitor_id"
+  end
+
   add_foreign_key "contacts", "people"
   add_foreign_key "employment_histories", "people"
   add_foreign_key "essays", "people"
+  add_foreign_key "facility_useds", "visits"
   add_foreign_key "language_proficiencies", "people"
   add_foreign_key "people", "sectors"
   add_foreign_key "professional_memberships", "people"
@@ -188,4 +224,5 @@ ActiveRecord::Schema.define(version: 2019_12_14_155030) do
   add_foreign_key "specialisations", "categories"
   add_foreign_key "specialisations", "fields"
   add_foreign_key "specialisations", "people"
+  add_foreign_key "visits", "visitors"
 end
