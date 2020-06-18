@@ -25,10 +25,11 @@ class RegistersController < ApplicationController
   # POST /registers.json
   def create
     @register = Register.new(register_params)
+    @action_notice = "#{@register.name} has been successfully saved. Welcome to NIPAM!"
 
     respond_to do |format|
       if @register.save
-        format.html { redirect_to @register, notice: 'Register was successfully created.' }
+        format.html { redirect_to new_path, notice: @action_notice }
         format.json { render :show, status: :created, location: @register }
       else
         format.html { render :new }
