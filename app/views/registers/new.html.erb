@@ -5,9 +5,9 @@
       <div class="form-group col-md-8 col-md-offset-2">
         <%= render '/layouts/alerts' %>
         <% if current_uri == '/new' %>
-          <legend><h1 style="color: white;">New Register</h1></legend>
+          <legend><h1 style="color: white;">Please enter your details below:</h1></legend>
         <% else %>
-          <legend><h1>New Register</h1></legend>
+          <legend><strong><h1>New Register</h1></strong></legend>
         <% end %>
 
         <%= render 'form', register: @register %>

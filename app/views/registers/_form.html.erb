@@ -15,35 +15,35 @@
 
   <div class="form-row">
     <div class="form-group col-md-12">
-      <%= form.label :name %> <abbr title="Required" aria-label="required">*</abbr>
+      <h4><%= form.label :name %> <abbr title="Required" aria-label="required">*</abbr></h4>
       <%= form.text_field :name, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-12">
-      <%= form.label :number %> <abbr title="Required" aria-label="required">*</abbr>
+      <h4><%= form.label :number %> <abbr title="Required" aria-label="required">*</abbr></h4>
       <%= form.number_field :number, class: "form-control"  %>
     </div>
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-12">
-      <%= form.label :purpose %> <abbr title="Required" aria-label="required">*</abbr>
-      <%= form.text_field :purpose, class: "form-control"  %>
+    <div class="form-group col-md-12" >
+      <h4><%= form.label :purpose %> <abbr title="Required" aria-label="required">*</abbr></h4>
+      <p style="color: black;"><%= form.select :purpose, @purpose_list.collect { |purpose| [purpose,purpose]}, prompt: 'Select Purpose...', class: 'form-control' %></p>
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-12">
-      <%= form.label 'Location / Organisation' %> <abbr title="Required" aria-label="required">*</abbr>
+      <h4><%= form.label 'Location / Organisation' %></h4>
       <%= form.text_field :loc_org, class: "form-control"  %>
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-12">
-      <%= form.label :temperature %> <abbr title="Required" aria-label="required">*</abbr>
+      <h4><%= form.label :temperature %></h4>
       <%= form.text_field :temp, class: "form-control"  %>
     </div>
   </div>
