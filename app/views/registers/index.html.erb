@@ -14,8 +14,6 @@
             <th>Number</th>
             <th>Date and Time</th>
             <th>Purpose</th>
-            <th>Location / Organisation</th>
-            <th>Temp</th>
             <th></th>
             <th></th>
             <th></th>
@@ -30,8 +28,6 @@
               <td><%= register.number %></td>
               <td><%= register.time %></td>
               <td><%= register.purpose %></td>
-              <td><%= register.loc_org %></td>
-              <td><%= register.temp %></td>
               <td><%= link_to 'View', register %></td>
               <td><%= link_to 'Edit', edit_register_path(register) %></td>
               <td><%= link_to 'Delete', register, method: :delete, data: { confirm: 'Are you sure?' } %></td>
