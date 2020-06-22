@@ -70,7 +70,7 @@ class RegistersController < ApplicationController
     end
 
     def set_purpose_list
-      @purpose_list = ['Attending a conference','Attending a seminar','Attending a training programme','Official visit','Using Cafeteria', 'Other']
+      @purpose_list = ['Attending a conference','Attending a seminar','Attending a training programme','Official visit','Using Cafeteria','Library','Other']
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
