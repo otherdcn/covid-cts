@@ -26,7 +26,7 @@ class RegistersController < ApplicationController
   # POST /registers.json
   def create
     @register = Register.new(register_params)
-    @action_notice = "#{@register.name} has been successfully saved. Welcome to NIPAM!"
+    @action_notice = "#{@register.full_name} has been successfully saved. Welcome to NIPAM!"
 
     respond_to do |format|
       if @register.save
@@ -75,6 +75,6 @@ class RegistersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def register_params
-      params.require(:register).permit(:name, :number, :purpose, :loc_org, :temp)
+      params.require(:register).permit(:name, :number, :purpose, :loc_org, :temp, :last_name)
     end
 end

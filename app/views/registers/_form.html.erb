@@ -14,9 +14,14 @@
   <p>Required fields are followed by <abbr title="Required">*</abbr></p>
 
   <div class="form-row">
-    <div class="form-group col-md-12">
-      <h4><%= form.label :name %> <abbr title="Required" aria-label="required">*</abbr></h4>
+    <div class="form-group col-md-6">
+      <h4><%= form.label :first_name %> <abbr title="Required" aria-label="required">*</abbr></h4>
       <%= form.text_field :name, class: "form-control" %>
+    </div>
+    
+    <div class="form-group col-md-6">
+      <h4><%= form.label :last_name %> <abbr title="Required" aria-label="required">*</abbr></h4>
+      <%= form.text_field :last_name, class: "form-control" %>
     </div>
   </div>
 

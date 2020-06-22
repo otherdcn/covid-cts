@@ -4,4 +4,8 @@ class Register < ApplicationRecord
 
     time.strftime("%A, %d %B %Y,  %H:%M:%S")
   end
+
+  def full_name
+    "#{name} #{last_name}"
+  end
 end

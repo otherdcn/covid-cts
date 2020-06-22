@@ -9,7 +9,8 @@
       <table id="people-table" class="display">
         <thead>
           <tr>
-            <th>Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
             <th>Number</th>
             <th>Date and Time</th>
             <th>Purpose</th>
@@ -25,6 +26,7 @@
           <% @registers.each do |register| %>
             <tr>
               <td><%= register.name %></td>
+              <td><%= register.last_name %></td>
               <td><%= register.number %></td>
               <td><%= register.time %></td>
               <td><%= register.purpose %></td>
