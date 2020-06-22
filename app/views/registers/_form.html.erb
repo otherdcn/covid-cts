@@ -1,3 +1,5 @@
+<%= image_tag("covid19-5.png", alt: 'covid-19', id: "covid19") %>
+
 <%= form_with(model: register, local: true) do |form| %>
   <% if register.errors.any? %>
     <div id="error_explanation">
@@ -26,34 +28,21 @@
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-12">
+    <div class="form-group col-md-6">
       <h4><%= form.label :number %> <abbr title="Required" aria-label="required">*</abbr></h4>
-      <%= form.number_field :number, class: "form-control"  %>
+      <%= form.number_field :number, class: "form-control" %>
     </div>
-  </div>
 
-  <div class="form-row">
-    <div class="form-group col-md-12" >
+    <div class="form-group col-md-6">
       <h4><%= form.label :purpose %> <abbr title="Required" aria-label="required">*</abbr></h4>
       <p style="color: black;"><%= form.select :purpose, @purpose_list.collect { |purpose| [purpose,purpose]}, prompt: 'Select Purpose...', class: 'form-control' %></p>
     </div>
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-12">
-      <h4><%= form.label 'Location / Organisation' %></h4>
-      <%= form.text_field :loc_org, class: "form-control"  %>
+    <div class="actions form-group col-md-4 col-md-offset-4">
+      <%= form.submit 'Submit', class: 'btn btn-primary', id: "register-submit" %> <hr />
     </div>
   </div>
 
-  <div class="form-row">
-    <div class="form-group col-md-12">
-      <h4><%= form.label :temperature %></h4>
-      <%= form.text_field :temp, class: "form-control"  %>
-    </div>
-  </div>
-
-  <div class="actions">
-    <%= form.submit 'Submit', class: 'btn btn-primary', id: "register-submit" %> <hr />
-  </div>
 <% end %>
