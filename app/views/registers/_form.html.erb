@@ -13,34 +13,34 @@
     </div>
   <% end %>
   
-  <p>Required fields are followed by <abbr title="Required">*</abbr></p>
+  <strong>Required fields are followed by <abbr title="Required">*</abbr></strong>
 
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-sm-6">
       <h4><%= form.label :first_name %> <abbr title="Required" aria-label="required">*</abbr></h4>
       <%= form.text_field :name, class: "form-control" %>
     </div>
     
-    <div class="form-group col-md-6">
+    <div class="form-group col-sm-6">
       <h4><%= form.label :last_name %> <abbr title="Required" aria-label="required">*</abbr></h4>
       <%= form.text_field :last_name, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-sm-6">
       <h4><%= form.label :number %> <abbr title="Required" aria-label="required">*</abbr></h4>
       <%= form.number_field :number, class: "form-control" %>
     </div>
 
-    <div class="form-group col-md-6">
+    <div class="form-group col-sm-6">
       <h4><%= form.label :purpose %> <abbr title="Required" aria-label="required">*</abbr></h4>
       <p style="color: black;"><%= form.select :purpose, @purpose_list.collect { |purpose| [purpose,purpose]}, prompt: 'Select Purpose...', class: 'form-control' %></p>
     </div>
   </div>
 
   <div class="form-row">
-    <div class="actions form-group col-md-4 col-md-offset-4">
+    <div class="actions form-group col-sm-4 col-sm-offset-4">
       <%= form.submit 'Submit', class: 'btn btn-primary', id: "register-submit" %> <hr />
     </div>
   </div>
