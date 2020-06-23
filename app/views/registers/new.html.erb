@@ -4,12 +4,8 @@
     <div class="row">
       <div class="form-group col-md-8 col-md-offset-2">
         <%= render '/layouts/alerts' %>
-        <% if current_uri == '/new' %>
-          <%= image_tag("nipam-logo.png", alt: 'NIPAM', id: "nipam-logo") %>
-          <legend><h1 id="nipam-welcome-heading">WELCOME TO NIPAM</h1></legend>
-        <% else %>
-          <legend><strong><h1>New Register</h1></strong></legend>
-        <% end %>
+        <%= image_tag("nipam-logo.png", alt: 'NIPAM', id: "nipam-logo") %>
+        <legend><h1 id="nipam-welcome-heading">WELCOME TO NIPAM</h1></legend>
 
         <%= render 'form', register: @register %>
 
