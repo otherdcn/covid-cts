@@ -22,6 +22,8 @@
     </div>
   <% end %>
 
+  <h4>Required fields are followed by <abbr title="Required">*</abbr></h4>
+  
   <div class="form-row">
     <div class="form-group col-sm-6">
       <h4><%= form.label :first_name %> <abbr title="Required" aria-label="required">*</abbr></h4>
@@ -44,6 +46,13 @@
       <div  style="color: black;">
       <h4 style="color: white;"><%= form.label :purpose %> <abbr title="Required" aria-label="required">*</abbr></h4>
       <%= form.select :purpose, @purpose_list.collect { |purpose| [purpose,purpose]}, prompt: 'Select Purpose...' %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-sm-4 col-sm-offset-4">
+      <h4><%= form.label :temperature %></h4>
+      <%= form.text_field :temp, class: "form-control" %>
     </div>
   </div>
 
