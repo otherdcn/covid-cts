@@ -1,4 +1,5 @@
 class RegistersController < ApplicationController
+  skip_before_action :require_login, only: [:new, :create]
   before_action :set_register, only: [:show, :edit, :update, :destroy]
   before_action :set_purpose_list
 
