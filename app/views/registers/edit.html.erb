@@ -5,7 +5,12 @@
 
       <%= render 'form', register: @register %>
 
-      <%= link_to 'Back', registers_path %>
+      
+      <div class="form-row">
+        <div class="form-group col-sm-12">
+          <%= link_to 'Back', @register %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

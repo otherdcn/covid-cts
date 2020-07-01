@@ -28,7 +28,7 @@
     </p>
 
     <%= link_to 'Edit', edit_register_path(@register) %> |
-    <%= link_to 'Back', registers_path %>
-    <%= link_to 'Delete', register, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Back', registers_path %> |
+    <%= link_to 'Delete', @register, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 </div>
