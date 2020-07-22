@@ -43,6 +43,8 @@ class ApplicationController < ActionController::Base
           @namibian_cities.sort!
         end
       end
+
+      @namibian_cities.push("Non-Specified")
     end
 
     def require_login
