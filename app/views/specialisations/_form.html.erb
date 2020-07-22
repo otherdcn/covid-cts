@@ -40,10 +40,18 @@
       <%= form.select :station_duty, @namibian_cities.each { |city| [city,city]}, prompt: 'Select City/Town...'  %>
   </div>
 
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label 'Can Develop Training Material' %> <br />
+      <%= form.radio_button :can_develop_material, 'Yes' %> Yes<br />
+      <%= form.radio_button :can_develop_material, 'No' %> No <br />
+      <%= form.radio_button :can_develop_material, 'Not-Specified' %> Not-Specified <br />
+    </div>
+  </div>
+
   <div>
     <%= form.hidden_field :person_id, :value => @person['id'], class: "form-control" %>
   </div>
-
 
   <div class="form-row">
     <div class="actions form-group col-md-12">

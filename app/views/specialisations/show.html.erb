@@ -22,6 +22,11 @@
     <%= @specialisation.station_duty %>
   </p>
   
+  <p>
+    <strong>Can Develop Training Material:</strong>
+    <%= @specialisation.can_develop_material %>
+  </p>
+  
   <%= link_to 'Edit', edit_person_specialisation_path(@person, @specialisation), class: 'btn btn-primary' %> |
   <%= link_to 'Back', person_path(@person), class: 'btn btn-primary' %>
 </div>
