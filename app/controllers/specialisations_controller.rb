@@ -2,6 +2,7 @@ class SpecialisationsController < ApplicationController
   before_action :get_person
   before_action :initialize_level
   before_action :set_specialisation, only: [:show, :edit, :update, :destroy]
+  before_action :set_areas
 
   # GET /specialisations
   # GET /specialisations.json
@@ -65,7 +66,11 @@ class SpecialisationsController < ApplicationController
 
   private
     def initialize_level
-      @level_array = ["Executive Development Programme", "Senior Management Development Programm", "Middle Management Development Programme", "Supervisory Development Programme", "Foundation Programme"]
+      @level_array = ["EDP", "SMDP", "MMDP", "SDP", "FP", "Non-Specified"]
+    end
+
+    def set_areas
+      @all_areas = ['Trainning', 'Consultancy', 'Research']
     end
 
     def get_person
