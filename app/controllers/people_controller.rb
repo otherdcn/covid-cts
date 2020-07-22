@@ -1,6 +1,7 @@
 class PeopleController < ApplicationController
   skip_before_action :require_login, only: [:index, :show]
   before_action :set_person, only: [:show, :edit, :update, :destroy]
+  before_action :set_titles
 
   # GET /people
   # GET /people.json
@@ -63,6 +64,10 @@ class PeopleController < ApplicationController
   end
 
   private
+    def set_titles
+      @all_titles = ['Dr', 'Mr', 'Mrs', 'Ms', 'Hon.', 'Rev']
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_person
       @person = Person.find(params[:id])

@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+  <h5><strong>BACKGROUND & PERSONAL DETAILS</strong></h5>
+
   <p>Required fields are followed by <abbr title="Required">*</abbr></p>
 
   
@@ -30,8 +32,8 @@
 
   <div class="form-row">
     <div class="form-group col-md-12">
-      <%= form.label :title %>
-      <%= form.text_field :title, class: "form-control" %>
+      <%= form.label :title %> <br />
+      <%= form.select :title, @all_titles.collect { |title| [title,title]}, prompt: 'Select Title...',class: 'form-control' %>
     </div>
   </div>
 
@@ -86,8 +88,8 @@
 
   <div class="form-row">
     <div class="form-group col-md-12">
-      <%= form.label 'Sector' %> <abbr title="Required" aria-label="required">*</abbr> <br />
-      <%= form.select :sector_id, Sector.all.collect {|opt| [opt.sector, opt.id]}, prompt: 'Select Sector...'  %>
+      <%= form.label 'Background' %> <abbr title="Required" aria-label="required">*</abbr> <br />
+      <%= form.select :sector_id, Sector.all.collect {|opt| [opt.sector, opt.id]}, prompt: 'Select Background...'  %>
     </div>
   </div>
 
