@@ -65,7 +65,7 @@ class AllSpecialisationsController < ApplicationController
 
   private
     def set_areas
-      @all_areas = ['Trainning', 'Consultancy', 'Research']
+      @all_areas = ['Training', 'Consultancy', 'Research']
     end
     
     def initialize_level

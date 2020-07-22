@@ -70,7 +70,7 @@ class SpecialisationsController < ApplicationController
     end
 
     def set_areas
-      @all_areas = ['Trainning', 'Consultancy', 'Research']
+      @all_areas = ['Training', 'Consultancy', 'Research']
     end
 
     def get_person
