@@ -16,7 +16,6 @@
   <div class="form-row">
     <div class="form-group col-md-12">
       <%= form.label 'Area of specialisation' %><br />
-      <%= form.select :category_id, Category.all.collect { |category| [category.category, category.id] }, prompt: 'Select Area...' %>
     </div>
   </div>
 

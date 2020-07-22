@@ -11,7 +11,6 @@
             <th>Field</th>
             <th>Level</th>
             <th>Station Duty</th>
-            <th>Category</th>
             <th>Person</th>
             <th></th>
             <th></th>
@@ -25,7 +24,6 @@
               <td><%= specialisation.field.field %></td>
               <td><%= specialisation.level %></td>
               <td><%= specialisation.station_duty %></td>
-              <td><%= specialisation.category.category %></td>
               <td><%= specialisation.person.full_name %></td>
               <td><%= link_to 'Show Person', person_path(@person) %></td>
               <td><%= link_to 'Edit', edit_person_specialisation_path(@person, specialisation) %></td>

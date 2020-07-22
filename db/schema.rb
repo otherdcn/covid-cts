@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_22_065254) do
+ActiveRecord::Schema.define(version: 2020_07_22_102538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -176,11 +176,9 @@ ActiveRecord::Schema.define(version: 2020_06_22_065254) do
     t.bigint "field_id", null: false
     t.string "level", null: false
     t.string "station_duty", null: false
-    t.bigint "category_id"
     t.bigint "person_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_specialisations_on_category_id"
     t.index ["field_id"], name: "index_specialisations_on_field_id"
     t.index ["person_id"], name: "index_specialisations_on_person_id"
   end
@@ -222,7 +220,6 @@ ActiveRecord::Schema.define(version: 2020_06_22_065254) do
   add_foreign_key "references", "people"
   add_foreign_key "skills", "people"
   add_foreign_key "skills", "skill_types"
-  add_foreign_key "specialisations", "categories"
   add_foreign_key "specialisations", "fields"
   add_foreign_key "specialisations", "people"
   add_foreign_key "visits", "visitors"
