@@ -12,7 +12,7 @@
             <th>Field</th>
             <th>Level</th>
             <th>Station Duty</th>
-            <th>Category</th>
+            <th>Area</th>
             <th>Person</th>
             <th></th>
             <th></th>
@@ -25,7 +25,7 @@
               <td><%= specialisation.field.field %></td>
               <td><%= specialisation.level %></td>
               <td><%= specialisation.station_duty %></td>
-              <td><%= specialisation.category.category %></td>
+              <td><%= specialisation.area %></td>
               <td><%= specialisation.person.full_name %></td>
               <td><%= link_to 'View Specialisation', all_specialisation_path(specialisation) %></td>
               <td><%= link_to 'Show Person', person_path(specialisation.person) %></td>

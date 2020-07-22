@@ -22,15 +22,15 @@
 
   <div class="form-row">
     <div class="form-group col-md-12">
-      <%= form.label :category_id %><br />
-      <%= form.select :category_id, Category.all.collect { |category| [category.category, category.id] }, prompt: 'Select Category...' %>
+      <%= form.label 'Area of specialisation' %><br />
+      <%= form.select :area, @all_areas.collect { |area| [area, area] }, prompt: 'Select Area...' %>
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-12">
-      <%= form.label :field_id %> <abbr title="Required" aria-label="required">*</abbr> <br />
-      <%= form.select :field_id, Field.all.collect { |field| [field.field, field.id] }, prompt: 'Select Field of Specialisation...' %>
+      <%= form.label 'Field of specialisation' %> <abbr title="Required" aria-label="required">*</abbr> <br />
+      <%= form.select :field_id, Field.all.collect { |field| [field.field, field.id] }, prompt: 'Select Field...' %>
     </div>
   </div>
 
