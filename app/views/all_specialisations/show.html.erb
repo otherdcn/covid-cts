@@ -7,6 +7,11 @@
   </h1>
 
   <p>
+    <strong>Area:</strong>
+    <%= @specialisation.area %>
+  </p>
+ 
+  <p>
     <strong>Field of Specialisation:</strong>
     <%= @specialisation.field.field %>
   </p>
@@ -20,10 +25,10 @@
     <strong>Station Duty:</strong>
     <%= @specialisation.station_duty %>
   </p>
-
+ 
   <p>
-    <strong>Area:</strong>
-    <%= @specialisation.area %>
+    <strong>Can Develop Training Material:</strong>
+    <%= @specialisation.can_develop_material %>
   </p>
 
   <%= link_to 'Edit', edit_person_specialisation_path(@specialisation.person, @specialisation), class: "btn btn-primary" %> |
