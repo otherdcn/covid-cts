@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_23_083407) do
+ActiveRecord::Schema.define(version: 2020_07_23_142040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -186,6 +186,14 @@ ActiveRecord::Schema.define(version: 2020_07_23_083407) do
     t.index ["person_id"], name: "index_specialisations_on_person_id"
   end
 
+  create_table "user_categories", force: :cascade do |t|
+    t.bigint "person_id", null: false
+    t.string "category", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_user_categories_on_person_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.citext "email"
     t.string "password_digest"
@@ -225,5 +233,6 @@ ActiveRecord::Schema.define(version: 2020_07_23_083407) do
   add_foreign_key "skills", "skill_types"
   add_foreign_key "specialisations", "fields"
   add_foreign_key "specialisations", "people"
+  add_foreign_key "user_categories", "people"
   add_foreign_key "visits", "visitors"
 end

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  people: one
+  category: MyString
+
+two:
+  people: two
+  category: MyString

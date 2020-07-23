@@ -1,0 +1,31 @@
+<%= form_with(model: [@person, user_category], local: true) do |form| %>
+  <% if user_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user_category.errors.count, "error") %> prohibited this user_category from being saved:</h2>
+
+      <ul>
+      <% user_category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label 'Category' %> <abbr title="Required" aria-label="required">*</abbr> <br />
+      <%= form.select :category, Category.all.collect { |category| [category.category,category.category] }, prompt: 'Select Category...' %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.hidden_field :person_id, :value => @person['id'], class: "form-control" %>
+  </div>
+
+  <div class="form-row">
+    <div class="actions form-group col-md-12">
+      <%= form.submit class: 'btn btn-primary' %> <hr>
+    </div>
+  </div>
+
+<% end %>

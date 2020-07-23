@@ -2,6 +2,9 @@ class Person < ApplicationRecord
     belongs_to :sector
     validates :sector, presence: true
 
+    has_many :user_categories
+    validates_associated :user_categories
+
     has_many :specialisations, dependent: :destroy
     validates_associated :specialisations
 

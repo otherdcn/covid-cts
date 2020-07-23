@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :professional_memberships
     resources :references
     resources :employment_histories
+    resources :user_categories
   end
 
   resources :skill_types

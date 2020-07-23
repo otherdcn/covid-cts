@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="form-group col-md-8 col-md-offset-2">
+      <legend><h1>New Category for: <%= @person.title + ' ' + @person.full_name %> </h1></legend>
+  
+      <%= render 'form', user_category: @user_category %>
+  
+      <%= link_to 'Back', person_path(@person), class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

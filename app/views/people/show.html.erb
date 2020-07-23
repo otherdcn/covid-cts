@@ -117,6 +117,35 @@
         </div>
       </div>
 
+     <!-- User Category -->
+      <div class="panel-group" id="user_categories">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3>Categories:<h3>
+          </div>
+          <div class="panel-body">
+            <div class="table-responsive text-nowrap">
+              <% if @person.user_categories.empty? %>
+                <p>No Categories Linked</p>
+              <% else %>
+                <table id="specialisation-table" class="display">
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <%= render @person.user_categories %>
+                  </tbody>
+                </table>
+              <% end %> 
+              <%= link_to 'Add Category', new_person_user_category_path(@person), class: 'btn btn-primary' %>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Specialisations -->
       <div class="panel-group" id="specialisations">
         <div class="panel panel-default">
