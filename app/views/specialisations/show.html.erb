@@ -27,6 +27,11 @@
     <%= @specialisation.can_develop_material %>
   </p>
   
+  <p>
+    <strong>Explanation:</strong>
+    <pre><%= @specialisation.explanation %></pre>
+  </p>
+
   <%= link_to 'Edit', edit_person_specialisation_path(@person, @specialisation), class: 'btn btn-primary' %> |
   <%= link_to 'Back', person_path(@person), class: 'btn btn-primary' %>
 </div>
