@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_22_140456) do
+ActiveRecord::Schema.define(version: 2020_07_23_083407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -181,6 +181,7 @@ ActiveRecord::Schema.define(version: 2020_07_22_140456) do
     t.datetime "updated_at", null: false
     t.string "area"
     t.string "can_develop_material"
+    t.text "explanation"
     t.index ["field_id"], name: "index_specialisations_on_field_id"
     t.index ["person_id"], name: "index_specialisations_on_person_id"
   end
