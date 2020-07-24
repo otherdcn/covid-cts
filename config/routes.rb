@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :assignments
   root 'home#index'
   resources :people do
     resources :contacts
@@ -12,6 +11,7 @@ Rails.application.routes.draw do
     resources :references
     resources :employment_histories
     resources :user_categories
+    resources :assignments
   end
 
   resources :skill_types

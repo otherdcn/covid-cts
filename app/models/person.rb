@@ -25,6 +25,9 @@ class Person < ApplicationRecord
     
     has_many :employment_histories, dependent: :destroy
     validates_associated :employment_histories
+
+    has_many :assignments, dependent: :destroy
+    validates_associated :assignments
     
     has_one :contact, dependent: :destroy
     validates_associated :contact

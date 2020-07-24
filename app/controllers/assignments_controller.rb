@@ -1,10 +1,11 @@
 class AssignmentsController < ApplicationController
+  before_action :get_person
   before_action :set_assignment, only: [:show, :edit, :update, :destroy]
 
   # GET /assignments
   # GET /assignments.json
   def index
-    @assignments = Assignment.all
+    @assignments = @person.assignments
   end
 
   # GET /assignments/1
@@ -14,7 +15,7 @@ class AssignmentsController < ApplicationController
 
   # GET /assignments/new
   def new
-    @assignment = Assignment.new
+    @assignment = @person.assignments.build
   end
 
   # GET /assignments/1/edit
@@ -24,11 +25,11 @@ class AssignmentsController < ApplicationController
   # POST /assignments
   # POST /assignments.json
   def create
-    @assignment = Assignment.new(assignment_params)
+    @assignment = @person.assignments.build(assignment_params)
 
     respond_to do |format|
       if @assignment.save
-        format.html { redirect_to @assignment, notice: 'Assignment was successfully created.' }
+        format.html { redirect_to person_path(@person), notice: 'Assignment was successfully created.' }
         format.json { render :show, status: :created, location: @assignment }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class AssignmentsController < ApplicationController
   def update
     respond_to do |format|
       if @assignment.update(assignment_params)
-        format.html { redirect_to @assignment, notice: 'Assignment was successfully updated.' }
+        format.html { redirect_to person_path(@person), notice: 'Assignment was successfully updated.' }
         format.json { render :show, status: :ok, location: @assignment }
       else
         format.html { render :edit }
@@ -56,15 +57,19 @@ class AssignmentsController < ApplicationController
   def destroy
     @assignment.destroy
     respond_to do |format|
-      format.html { redirect_to assignments_url, notice: 'Assignment was successfully destroyed.' }
+      format.html { redirect_to person_url(@person), notice: 'Assignment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+    def get_person
+      @person = Person.find(params[:person_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_assignment
-      @assignment = Assignment.find(params[:id])
+      @assignment = @person.assignments.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
