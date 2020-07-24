@@ -29,7 +29,7 @@ class AssignmentsController < ApplicationController
 
     respond_to do |format|
       if @assignment.save
-        format.html { redirect_to person_assignment_path(@person, @assignment), notice: 'Assignment was successfully created.' }
+        format.html { redirect_to new_person_assignment_path(@person), notice: 'Assignment was successfully created.' }
         format.json { render :show, status: :created, location: @assignment }
       else
         format.html { render :new }

@@ -29,7 +29,7 @@ class ProfessionalMembershipsController < ApplicationController
 
     respond_to do |format|
       if @professional_membership.save
-        format.html { redirect_to person_path(@person), notice: 'Professional membership was successfully created.' }
+        format.html { redirect_to new_person_professional_membership_path(@person), notice: 'Professional membership was successfully created.' }
         format.json { render :show, status: :created, location: @professional_membership }
       else
         format.html { render :new }

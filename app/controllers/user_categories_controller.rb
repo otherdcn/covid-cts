@@ -29,7 +29,7 @@ class UserCategoriesController < ApplicationController
 
     respond_to do |format|
       if @user_category.save
-        format.html { redirect_to person_path(@person), notice: 'User category was successfully created.' }
+        format.html { redirect_to new_person_user_category_path(@person) , notice: 'User category was successfully created.' }
         format.json { render :show, status: :created, location: @user_category }
       else
         format.html { render :new }

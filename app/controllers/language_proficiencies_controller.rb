@@ -29,7 +29,7 @@ class LanguageProficienciesController < ApplicationController
 
     respond_to do |format|
       if @language_proficiency.save
-        format.html { redirect_to person_path(@person), notice: 'Language proficiency was successfully created.' }
+        format.html { redirect_to new_person_language_proficiency_path(@person), notice: 'Language proficiency was successfully created.' }
         format.json { render :show, status: :created, location: @language_proficiency }
       else
         format.html { render :new }

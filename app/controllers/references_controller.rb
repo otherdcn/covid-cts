@@ -29,7 +29,7 @@ class ReferencesController < ApplicationController
 
     respond_to do |format|
       if @reference.save
-        format.html { redirect_to person_path(@person), notice: 'Reference was successfully created.' }
+        format.html { redirect_to new_person_reference_path(@person), notice: 'Reference was successfully created.' }
         format.json { render :show, status: :created, location: @reference }
       else
         format.html { render :new }

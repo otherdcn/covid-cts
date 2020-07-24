@@ -29,7 +29,7 @@ class EmploymentHistoriesController < ApplicationController
 
     respond_to do |format|
       if @employment_history.save
-        format.html { redirect_to person_path(@person), notice: 'Employment history was successfully created.' }
+        format.html { redirect_to new_person_employment_history_path(@person), notice: 'Employment history was successfully created.' }
         format.json { render :show, status: :created, location: @employment_history }
       else
         format.html { render :new }

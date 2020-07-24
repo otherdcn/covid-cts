@@ -31,7 +31,7 @@ class SpecialisationsController < ApplicationController
 
     respond_to do |format|
       if @specialisation.save
-        format.html { redirect_to person_path(@person), notice: 'Specialisation was successfully created.' }
+        format.html { redirect_to new_person_specialisation_path(@person), notice: 'Specialisation was successfully created.' }
         format.json { render :show, status: :created, location: @specialisation }
       else
         format.html { render :new }

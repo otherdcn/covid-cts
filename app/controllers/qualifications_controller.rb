@@ -29,7 +29,7 @@ class QualificationsController < ApplicationController
 
     respond_to do |format|
       if @qualification.save
-        format.html { redirect_to person_path(@person), notice: 'Qualification was successfully created.' }
+        format.html { redirect_to new_person_qualification_path(@person), notice: 'Qualification was successfully created.' }
         format.json { render :show, status: :created, location: @qualification }
       else
         format.html { render :new }
