@@ -1,4 +1,4 @@
-<%= form_with(model: assignment, local: true) do |form| %>
+<%= form_with(model: [@person, assignment], local: true) do |form| %>
   <% if assignment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
@@ -11,44 +11,50 @@
     </div>
   <% end %>
 
+  <p>Required fields are followed by <abbr title="Required">*</abbr></p>
+
   <div class="field">
-    <%= form.label :si_no %>
+    <%= form.label "SI no" %>
     <%= form.text_field :si_no %>
   </div>
 
   <div class="field">
-    <%= form.label :assignment_name %>
+    <%= form.label 'Name of Assignment' %>
     <%= form.text_field :assignment_name %>
   </div>
 
   <div class="field">
-    <%= form.label :project_name %>
+    <%= form.label 'Name of Project' %>
     <%= form.text_field :project_name %>
   </div>
 
   <div class="field">
-    <%= form.label :owner_sponsoring_agency %>
+    <%= form.label 'Owner or Sponsoring Agency' %>
     <%= form.text_field :owner_sponsoring_agency %>
   </div>
 
   <div class="field">
-    <%= form.label :cost_of_project %>
+    <%= form.label 'Cost of Project' %>
     <%= form.text_field :cost_of_project %>
   </div>
 
   <div class="field">
-    <%= form.label :commencement_date %>
+    <%= form.label 'Date of Commencement' %>
     <%= form.date_select :commencement_date %>
   </div>
 
   <div class="field">
-    <%= form.label :completion_date %>
+    <%= form.label 'Date of Completion' %>
     <%= form.date_select :completion_date %>
   </div>
 
   <div class="field">
-    <%= form.label :satisfactorily_completed %>
+    <%= form.label 'Was assignment satisfactorily completed?' %>
     <%= form.text_field :satisfactorily_completed %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :person_id, :value => @person['id'], class: "form-control" %>
   </div>
 
   <div class="actions">

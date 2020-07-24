@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+  <h1>
+    <strong>
+    Assignment for: <%= @assignment.person.title %> <%= @assignment.person.first_name %> <%= @assignment.person.last_name %>
+    </strong>
+  </h1>
+
 <p>
   <strong>Si no:</strong>
   <%= @assignment.si_no %>
@@ -40,5 +46,5 @@
   <%= @assignment.satisfactorily_completed %>
 </p>
 
-<%= link_to 'Edit', edit_assignment_path(@assignment) %> |
-<%= link_to 'Back', assignments_path %>
+<%= link_to 'Edit', edit_person_assignment_path(@person, @assignment) %> |
+<%= link_to 'Back', person_path(@person) %>

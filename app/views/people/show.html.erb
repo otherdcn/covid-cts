@@ -31,6 +31,7 @@
               <li><a href="#qualifications">Qualifications</a></li>
               <li><a href="#professional_memberships">Professional Memberships</a></li>
               <li><a href="#employment_history">Employment History</a></li>
+              <li><a href="#assignments">Assignments</a></li>
               <li><a href="#essays">Essays</a></li>
               <li><a href="#references">References</a></li>
             </ul>
@@ -342,6 +343,39 @@
                 </table>
               <% end %>
               <%= link_to 'Add Previous Employment', new_person_employment_history_path(@person), class: 'btn btn-primary' %>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Assignment -->
+      <div class="panel-group" id="assignments">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3>Assignments:</h3>
+          </div>
+          <div class="panel-body">
+            <div class="table-responsive text-nowrap">
+              <% if @person.assignments.empty? %>
+                <p>No Assignments Exist</p>
+              <% else %>
+                <table id="emphistories-table" class="display">
+                  <thead>
+                    <th>SI. no</th>
+                    <th>Assignment name</th>
+                    <th>Project name</th>
+                    <th>Commencement date</th>
+                    <th>Completion date</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </thead>
+                  <tbody>
+                    <%= render @person.assignments %>
+                  </tbody>
+                </table>
+              <% end %>
+              <%= link_to 'Add Reference', new_person_assignment_path(@person), class: 'btn btn-primary' %>
             </div>
           </div>
         </div>
