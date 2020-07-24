@@ -3,5 +3,5 @@
 // You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on('turbolinks:load', function () {
-    $('#people-table').DataTable();
+    $('#assignments-table').DataTable();
 } );

@@ -359,7 +359,7 @@
               <% if @person.assignments.empty? %>
                 <p>No Assignments Exist</p>
               <% else %>
-                <table id="emphistories-table" class="display">
+                <table id="assignments-table" class="display">
                   <thead>
                     <th>SI. no</th>
                     <th>Assignment name</th>
@@ -375,7 +375,7 @@
                   </tbody>
                 </table>
               <% end %>
-              <%= link_to 'Add Reference', new_person_assignment_path(@person), class: 'btn btn-primary' %>
+              <%= link_to 'Add Assignment', new_person_assignment_path(@person), class: 'btn btn-primary' %>
             </div>
           </div>
         </div>
