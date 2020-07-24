@@ -13,51 +13,69 @@
 
   <p>Required fields are followed by <abbr title="Required">*</abbr></p>
 
-  <div class="field">
+  <div class="form-row">
+  <div class="form-group col-md-12">
     <%= form.label "SI no" %>
-    <%= form.text_field :si_no %>
+    <%= form.text_field :si_no, class: "form-control" %>
+  </div>
   </div>
 
-  <div class="field">
+  <div class="form-row">
+  <div class="form-group col-md-12">
     <%= form.label 'Name of Assignment' %>
-    <%= form.text_field :assignment_name %>
+    <%= form.text_field :assignment_name, class: "form-control" %>
+  </div>
   </div>
 
-  <div class="field">
+  <div class="form-row">
+  <div class="form-group col-md-12">
     <%= form.label 'Name of Project' %>
-    <%= form.text_field :project_name %>
+    <%= form.text_field :project_name, class: "form-control" %>
+  </div>
   </div>
 
-  <div class="field">
+  <div class="form-row">
+  <div class="form-group col-md-12">
     <%= form.label 'Owner or Sponsoring Agency' %>
-    <%= form.text_field :owner_sponsoring_agency %>
+    <%= form.text_field :owner_sponsoring_agency, class: "form-control" %>
+  </div>
   </div>
 
-  <div class="field">
+  <div class="form-row">
+  <div class="form-group col-md-12">
     <%= form.label 'Cost of Project' %>
-    <%= form.text_field :cost_of_project %>
+    <%= form.text_field :cost_of_project, class: "form-control" %>
+  </div>
   </div>
 
-  <div class="field">
+  <div class="form-row">
+  <div class="form-group col-md-12">
     <%= form.label 'Date of Commencement' %>
-    <%= form.date_select :commencement_date %>
+    <%= form.date_select :commencement_date, start_year: Date.today.year, end_year: 1980, class: "form-control", prompt: { day: 'Day', month: 'Month', year: 'Year' } %>
+  </div>
   </div>
 
-  <div class="field">
+  <div class="form-row">
+  <div class="form-group col-md-12">
     <%= form.label 'Date of Completion' %>
-    <%= form.date_select :completion_date %>
+    <%= form.date_select :completion_date, start_year: Date.today.year, end_year: 1980, class: "form-control", prompt: { day: 'Day', month: 'Month', year: 'Year' } %>
+  </div>
   </div>
 
-  <div class="field">
+  <div class="form-row">
+  <div class="form-group col-md-12">
     <%= form.label 'Was assignment satisfactorily completed?' %>
-    <%= form.text_field :satisfactorily_completed %>
+    <%= form.text_field :satisfactorily_completed, class: "form-control" %>
+  </div>
   </div>
 
   <div>
     <%= form.hidden_field :person_id, :value => @person['id'], class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-row">
+  <div class="form-group col-md-12">
+    <%= form.submit class: 'btn btn-primary' %> <hr>
+  </div>
   </div>
 <% end %>
