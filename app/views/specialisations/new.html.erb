@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="form-group col-md-8 col-md-offset-2">
+      <%= render '/layouts/alerts' %>
       <legend><h1>New Specialisation for: <%= @person.title + ' ' + @person.full_name %> </h1></legend>
   
       <%= render 'form', specialisation: @specialisation %>
