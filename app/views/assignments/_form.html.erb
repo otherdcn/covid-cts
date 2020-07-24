@@ -1,0 +1,57 @@
+<%= form_with(model: assignment, local: true) do |form| %>
+  <% if assignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
+
+      <ul>
+      <% assignment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :si_no %>
+    <%= form.text_field :si_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :assignment_name %>
+    <%= form.text_field :assignment_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :project_name %>
+    <%= form.text_field :project_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :owner_sponsoring_agency %>
+    <%= form.text_field :owner_sponsoring_agency %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cost_of_project %>
+    <%= form.text_field :cost_of_project %>
+  </div>
+
+  <div class="field">
+    <%= form.label :commencement_date %>
+    <%= form.date_select :commencement_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :completion_date %>
+    <%= form.date_select :completion_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :satisfactorily_completed %>
+    <%= form.text_field :satisfactorily_completed %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

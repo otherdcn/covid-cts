@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  si_no: MyString
+  assignment_name: MyString
+  project_name: MyString
+  owner_sponsoring_agency: MyString
+  cost_of_project: MyString
+  commencement_date: 2020-07-24
+  completion_date: 2020-07-24
+  satisfactorily_completed: MyString
+
+two:
+  si_no: MyString
+  assignment_name: MyString
+  project_name: MyString
+  owner_sponsoring_agency: MyString
+  cost_of_project: MyString
+  commencement_date: 2020-07-24
+  completion_date: 2020-07-24
+  satisfactorily_completed: MyString

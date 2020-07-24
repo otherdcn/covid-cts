@@ -10,11 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_23_142040) do
+ActiveRecord::Schema.define(version: 2020_07_24_080406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "plpgsql"
+
+  create_table "assignments", force: :cascade do |t|
+    t.string "si_no"
+    t.string "assignment_name"
+    t.string "project_name"
+    t.string "owner_sponsoring_agency"
+    t.float "cost_of_project"
+    t.date "commencement_date"
+    t.date "completion_date"
+    t.string "satisfactorily_completed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.citext "category", null: false
