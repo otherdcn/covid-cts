@@ -1,29 +1,6 @@
 Rails.application.routes.draw do
-  root 'home#index'
-  resources :people do
-    resources :contacts
-    resources :essays
-    resources :specialisations
-    resources :language_proficiencies
-    resources :skills
-    resources :qualifications
-    resources :professional_memberships
-    resources :references
-    resources :employment_histories
-    resources :user_categories
-    resources :assignments
-  end
-
-  resources :skill_types
-  resources :fields
-  resources :categories
-  resources :sectors
-  
-  resources :all_qualifications
-  resources :all_specialisations
-  resources :all_skills
-  resources :all_professional_memberships
-  
+  root 'registers#index'
+ 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   
