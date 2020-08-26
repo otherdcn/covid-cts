@@ -26,14 +26,18 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #004078;
-    color: white;
+    background-color: #cffbe4;
+    color: #21201e;
     text-align: left;
 }
 
 .list-group-item-info {
     text-color: yellow;
     text-align: center;
+}
+
+.btn .btn-primary {
+    background-color: #cffbe4;
 }
 
 /* 
@@ -47,15 +51,15 @@ header {
 }
 
 .navbar-default {
-    background-color: #004078;
-    border-color: #004078;
+    background-color: #cffbe4;
+    border-color: #cffbe4;
     padding-bottom: 30px;
     padding-top: 0px;
 }
 
 .navbar-default .navbar-brand {
     padding-top: 0px;
-    color: #ffffff;
+    color: #21201e;
 }
 
 @media (min-width: 768px) {
@@ -67,58 +71,58 @@ header {
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus {
-    color: #ffffff;
-    background-color: #02559e;
+    color: #21201e;
+    background-color: #19b061;
     border-radius: 10px;
 }
 
 .navbar-default .navbar-nav > .active > a:hover {
-    color: #ffffff;
-    background-color: #004078;
+    color: #21201e;
+    background-color: #cffbe4;
 }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-    color: #ffffff;
+    color: #21201e;
 }
 
 .navbar-default .navbar-text {
-    color: #ffffff;   
+    color: #21201e;   
 }
 
 .navbar-default .navbar-nav > li > a {
     padding-top: 15px;
     padding-bottom: 15px;
     margin-top: 20px;
-    color: #ffffff;
-    background-color: #004078;
+    color: #21201e;
+    background-color: #cffbe4;
     position: relative;
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: #ffffff;
-    background-color: #02559e;
+    color: #21201e;
+    background-color: #19b061;
     position: relative;
     border-radius: 10px;
     margin-left: 2px; margin-right: 2px;
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: #ffffff;
-    background-color: #004078;
+    color: #21201e;
+    background-color: #cffbe4;
 }
  
 .navbar-default .navbar-nav > li > .dropdown-menu {
-    background-color: #004078;
+    background-color: #cffbe4;
 }
  
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a {
-    color: #ffffff;
+    color: #21201e;
 }
  
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-    color: #ffffff;
-    background-color: #02559e; 
+    color: #21201e;
+    background-color: #19b061; 
 }
 
 .panel-heading h3 {

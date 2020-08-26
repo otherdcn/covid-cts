@@ -27,7 +27,7 @@ class RegistersController < ApplicationController
   # POST /registers.json
   def create
     @register = Register.new(register_params)
-    @action_notice = "#{@register.full_name} has been successfully saved. Welcome to NIPAM!"
+    @action_notice = "#{@register.full_name} has been successfully saved. Welcome to RFA!"
 
     respond_to do |format|
       if @register.save
